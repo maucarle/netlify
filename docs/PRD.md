@@ -226,3 +226,69 @@ Questa fase produce un **documento**, non codice; la "verifica" è di prodotto:
    di Riccardo) per validare comprensibilità e percezione di valore.
 4. Solo dopo: definizione della parte tecnica (modello di calcolo, database
    alimenti, piattaforma) — **fuori scope ora**.
+
+---
+
+## 11. Naming (proposte)
+
+Criteri: corto, memorabile, evocativo di montagna/energia, pronunciabile in
+italiano, idealmente utilizzabile anche in inglese per i viaggi internazionali
+di Riccardo. **Tutti i nomi richiedono verifica di dominio e marchio prima della
+scelta** (vedi domande per Riccardo).
+
+| Nome | Idea | Pro | Contro |
+|---|---|---|---|
+| **Kcalibro** ⭐ | gioco di parole *kcal* + *calibro* ("calibra le tue calorie") | Distintivo, italiano, racconta esattamente la funzione, brandizzabile | Solo italiano (debole all'estero) |
+| **TrailFuel** | "carburante da sentiero" | Internazionale, chiaro, scalabile EN | Generico, possibili omonimie/dominio occupato |
+| **Vetta** | la cima | Pulito, positivo, italiano | Parola comune → marchio/dominio difficili |
+| **Cammino & Calorie** | descrittivo | Subito comprensibile, SEO | Lungo, poco "brand" |
+| **Zainity** | *zaino* + suffisso brand | Originale, richiama lo zaino | Suono ibrido IT/EN, ortografia da spiegare |
+| **Passo (Passo Energia)** | *passo* = step/valico | Evocativo, doppio senso (passo di montagna) | Generico da solo |
+
+**Raccomandazione:** partire con **Kcalibro** come brand principale (forte sul
+mercato italiano di lancio e racconta la promessa), tenendo **TrailFuel** come
+possibile nome internazionale futuro o tagline. Decisione finale a Riccardo dopo
+check dominio/marchio e suo gusto personale.
+
+---
+
+## 12. Modello di prezzo (ipotesi da validare)
+
+**Ancoraggio competitivo:** Backcountry Foodie ~36–72 $/anno (≈ 33–66 €), tutto
+a pagamento; Packstack core gratis. Il consumatore italiano è più sensibile al
+prezzo: posizionarsi **leggermente sotto** i competitor USA, con un **free
+generoso** che fa da acquisizione.
+
+| Piano | Prezzo (ipotesi) | Cosa include |
+|---|---|---|
+| **Free** | 0 € | Calcolo calorico personalizzato, fabbisogno macro/acqua, categorie di cibo con peso indicativo, 1 percorso alla volta (non salvato) |
+| **Pass Cammino** (one-time) | **2,99 €** sblocco singolo | Per il neofita occasionale: menu concreto + lista spesa + ottimizzazione peso per *un* trekking. Converte chi non vuole abbonarsi |
+| **Premium** (abbonamento) | **4,99 €/mese** o **29,99 €/anno** | Menu concreti illimitati, lista spesa, ottimizzazione **ingombro**, diete/allergie, percorsi salvati e storico, contenuti "firma Riccardo" |
+| **Pro / Guida** (roadmap B2B) | **~99–149 €/anno** | Pianificazione per gruppi, profili multipli, ripartizione carico, branding per la guida |
+
+**Logica:** il *Pass Cammino* abbassa la barriera (micro-acquisto) e fa da ponte
+verso l'abbonamento; l'**annuale scontato (~50%)** spinge la fidelizzazione;
+il piano **Pro** monetizza il canale guide in futuro. Prezzi da validare con
+test sulla disponibilità a pagare dei clienti reali di Riccardo (§9).
+
+---
+
+## 13. Categorie alimentari (bozza tassonomia MVP)
+
+Tassonomia per il suggerimento §4.5. Per ogni categoria: ruolo nutrizionale,
+esempi tipici reperibili in Italia/EU, densità calorica indicativa (kcal/100 g)
+e nota su peso/packability. **Da validare con Riccardo** (cosa usano davvero sui
+suoi trekking) e con un nutrizionista per i valori.
+
+| Categoria | Ruolo | Esempi IT/EU | kcal/100 g | Note |
+|---|---|---|---|---|
+| **Carboidrati rapidi** | Energia immediata durante lo sforzo | Gel, gelatine, frutta disidratata, barrette energetiche, miele | ~300–400 | Pratici "in marcia"; attenzione al peso/zuccheri |
+| **Carboidrati lenti** | Base energetica dei pasti | Cous cous/riso/pasta (anche liofilizzati), gallette, crackers, pane di segale | ~350–400 | Versioni disidratate = leggere; alcune richiedono fornello |
+| **Grassi calorico-densi** ⭐ | Massima energia per grammo (chiave "ultralight") | Frutta secca (noci, mandorle), burro di arachidi, cioccolato fondente, olio EVO in tubetto, formaggio stagionato | ~500–700 | I migliori per risparmiare peso; saziano |
+| **Proteine** | Recupero muscolare | Bresaola/carne secca, tonno in busta, legumi disidratati, formaggio, proteine in polvere | ~250–400 | Importanti nei multi-giorno |
+| **Pasti pronti / liofilizzati** | Cena calda completa | Piatti liofilizzati EU (es. marche outdoor europee) | variabile | Leggeri ma voluminosi e costosi; richiedono acqua calda |
+| **Snack salati / reintegro sali** | Sodio e palatabilità | Crackers, salatini, olive, frutta secca salata, parmigiano | ~400–550 | Combattono l'"affaticamento da dolce", reintegrano sodio |
+| **Idratazione & integratori** | Acqua, elettroliti, energia liquida | Sali/elettroliti, maltodestrine, tè/caffè/orzo solubile | n/a | Non solo cibo: gestione acqua e sali |
+
+⭐ I **grassi calorico-densi** sono la leva educativa principale: a parità di
+calorie pesano molto meno → cuore del messaggio "ottimizza il peso".
