@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#2F5D45">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#2F5D45"></rect>
+    <path d="M250 560 L470 250 L610 430 L700 300 L950 560 Z" fill="none" stroke="#F3F0E7" stroke-width="22" stroke-linejoin="round"></path>
+    <circle cx="760" cy="270" r="46" fill="#C18A3D"></circle>
+  </svg>
+</template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Schibsted+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#E7E4DB}
+@keyframes scrn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+input{font-family:'Schibsted Grotesk',sans-serif}
+input::-webkit-inner-spin-button,input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+::-webkit-scrollbar{width:0;height:0}
+.topo::before{content:'';position:absolute;inset:0;pointer-events:none;opacity:0.05;background-size:320px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cg fill='none' stroke='%231F2A22' stroke-width='1.2'%3E%3Cellipse cx='150' cy='160' rx='38' ry='28'/%3E%3Cellipse cx='147' cy='156' rx='74' ry='54'/%3E%3Cellipse cx='144' cy='152' rx='112' ry='82'/%3E%3Cellipse cx='140' cy='148' rx='152' ry='112'/%3E%3Cellipse cx='136' cy='144' rx='196' ry='146'/%3E%3C/g%3E%3C/svg%3E")}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#E7E4DB;display:flex;flex-direction:column;align-items:center;padding:30px 16px 46px;font-family:'Hanken Grotesk',system-ui,sans-serif">
+
+  <sc-if value="{{ showChrome }}" hint-placeholder-val="{{ true }}">
+    <div style="width:100%;max-width:440px;margin-bottom:22px">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:14px">
+        <div>
+          <div style="font-weight:600;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(40,44,38,0.5)">Prototipo · Mobile · Italiano</div>
+          <div style="font-family:'Schibsted Grotesk',sans-serif;font-weight:800;font-size:21px;letter-spacing:-0.01em;color:#2A2E26;margin-top:5px">Kcalibro</div>
+        </div>
+        <div style="display:flex;gap:3px;background:#FFFFFF;border:1px solid rgba(40,44,38,0.12);border-radius:999px;padding:3px">
+          <button style="{{ boscoStyle }}" onClick="{{ setBosco }}">Bosco</button>
+          <button style="{{ pietraStyle }}" onClick="{{ setPietra }}">Pietra</button>
+        </div>
+      </div>
+      <div style="display:flex;gap:7px;overflow-x:auto;padding-bottom:4px">
+        <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="7">
+          <button style="{{ t.style }}" onClick="{{ t.onClick }}">{{ t.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+  </sc-if>
+
+  <div style="width:392px;height:812px;background:#23231F;border-radius:46px;padding:11px;box-shadow:0 30px 60px -18px rgba(40,40,30,0.5),0 8px 26px rgba(0,0,0,0.14);flex:none">
+    <div style="{{ themeVars }}">
+
+      <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:128px;height:26px;background:#23231F;border-radius:0 0 16px 16px;z-index:31"></div>
+      <div style="height:44px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 24px;font-family:'Schibsted Grotesk',sans-serif;font-weight:600;font-size:13px;color:var(--ink);z-index:20">
+        <span>9:41</span>
+        <span style="display:flex;align-items:center;gap:7px;font-size:11px">
+          <span>5G</span>
+          <span style="display:inline-block;width:22px;height:11px;border:1px solid var(--ink);border-radius:2px;position:relative;opacity:0.7"><span style="position:absolute;left:1.5px;top:1.5px;bottom:1.5px;right:6px;background:var(--ink)"></span></span>
+        </span>
+      </div>
+
+      <div style="flex:1;position:relative;overflow:hidden;background:var(--bg)">
+
+        <sc-if value="{{ is0 }}" hint-placeholder-val="{{ true }}">
+          <div data-screen-label="S0 Welcome" style="position:absolute;inset:0;display:flex;flex-direction:column;animation:scrn .5s cubic-bezier(0.16,1,0.3,1)">
+            <div class="topo" style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 36px;position:relative">
+              <div style="position:absolute;top:38%;left:50%;transform:translate(-50%,-50%);width:300px;height:300px;background:radial-gradient(circle,var(--accent-soft),transparent 70%);opacity:0.6;pointer-events:none"></div>
+              <svg width="70" height="48" viewBox="0 0 70 48" fill="none" stroke="var(--primary)" stroke-width="1.8" stroke-linejoin="round" style="position:relative"><path d="M3 45 L24 8 L37 28 L45 14 L67 45 Z"></path><circle cx="50" cy="11" r="4" fill="var(--accent)" stroke="none"></circle></svg>
+              <h1 style="font-family:'Schibsted Grotesk',sans-serif;font-weight:800;font-size:40px;letter-spacing:-0.02em;color:var(--ink);margin:20px 0 0;line-height:1">Kcalibro</h1>
+              <p style="font-family:'Schibsted Grotesk',sans-serif;font-weight:600;font-size:16px;color:var(--primary);margin:14px 0 0;line-height:1.4;max-width:250px">Calibra le tue calorie da cammino.</p>
+              <p style="font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:14px;color:var(--muted);margin:14px 0 0;line-height:1.6;max-width:240px">Scopri quante calorie consumi e cosa mettere nello zaino.</p>
+            </div>
+            <div style="padding:16px 22px calc(18px + env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:12px;flex:none">
+              <button style="appearance:none;border:none;cursor:pointer;width:100%;background:var(--primary);color:#fff;font-family:'Schibsted Grotesk',sans-serif;font-weight:600;font-size:15px;padding:16px;border-radius:var(--btn-radius)" onClick="{{ goProfilo }}">Inizia</button>
+              <button style="appearance:none;background:none;border:none;cursor:pointer;font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:13px;color:var(--muted);padding:2px" onClick="{{ goProfilo }}">Hai già un profilo? <span style="color:var(--primary);font-weight:600">Accedi</span></button>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ is1 }}">
+          <div data-screen-label="S1 Profilo" style="position:absolute;inset:0;display:flex;flex-direction:column;animation:scrn .34s cubic-bezier(0.16,1,0.3,1)">
+            <div style="height:54px;flex:none;display:flex;align-items:center;gap:10px;padding:0 12px;border-bottom:1px solid var(--line)">
+              <button style="appearance:none;background:var(--chip);border:none;color:var(--primary);width:34px;height:34px;border-radius:50%;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1" onClick="{{ goBack }}">‹</button>
+              <span style="flex:1;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)">Passo 1 / 4</span>
+              <span style="display:flex;gap:6px;align-items:center"><span style="width:7px;height:7px;border-radius:50%;background:var(--primary)"></span><span style="width:7px;height:7px;border-radius:50%;background:var(--track)"></span><span style="width:7px;height:7px;border-radius:50%;background:var(--track)"></span><span style="width:7px;height:7px;border-radius:50%;background:var(--track)"></span></span>
+            </div>
+            <div style="flex:1;overflow-y:auto;padding:24px 22px 28px">
+              <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--primary)">Profilo biometrico</div>
+              <h2 style="font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:25px;letter-spacing:-0.01em;color:var(--ink);margin:9px 0 0;line-height:1.1">Il tuo profilo</h2>
+              <p style="font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:14px;color:var(--muted);line-height:1.55;margin:10px 0 0">Servono pochi dati per personalizzare il calcolo. Restano sul tuo dispositivo.</p>
+
+              <div style="margin-top:24px">
+                <span style="display:block;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:13px;color:var(--muted);margin-bottom:10px">Sesso</span>
+                <div style="display:flex;gap:8px">
+                  <sc-for list="{{ sessoOpts }}" as="o" hint-placeholder-count="3"><button style="{{ o.style }}" onClick="{{ o.onClick }}">{{ o.label }}</button></sc-for>
+                </div>
+              </div>
+
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:15px 0;margin-top:18px">
+                <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:13px;color:var(--muted)">Età</span>
+                <div style="display:flex;align-items:baseline;gap:8px"><input type="text" inputmode="numeric" value="34" style="background:transparent;border:none;outline:none;text-align:right;color:var(--ink);font-weight:600;font-size:20px;width:50px"><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:13px;color:var(--muted);min-width:34px">anni</span></div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:15px 0">
+                <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:13px;color:var(--muted)">Altezza</span>
+                <div style="display:flex;align-items:baseline;gap:8px"><input type="text" inputmode="numeric" value="178" style="background:transparent;border:none;outline:none;text-align:right;color:var(--ink);font-weight:600;font-size:20px;width:50px"><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:13px;color:var(--muted);min-width:34px">cm</span></div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:15px 0">
+                <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:13px;color:var(--muted)">Peso</span>
+                <div style="display:flex;align-items:baseline;gap:8px"><input type="text" inputmode="numeric" value="72" style="background:transparent;border:none;outline:none;text-align:right;color:var(--ink);font-weight:600;font-size:20px;width:50px"><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:13px;color:var(--muted);min-width:34px">kg</span></div>
+              </div>
+
+              <div style="margin-top:24px">
+                <div style="display:flex;align-items:center;gap:9px;margin-bottom:10px">
+                  <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:13px;color:var(--muted)">Livello di allenamento</span>
+                  <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:var(--primary);background:var(--accent-soft);padding:3px 8px;border-radius:999px">Opzionale</span>
+                </div>
+                <div style="display:flex;gap:8px">
+                  <sc-for list="{{ allenOpts }}" as="o" hint-placeholder-count="3"><button style="{{ o.style }}" onClick="{{ o.onClick }}">{{ o.label }}</button></sc-for>
+                </div>
+                <p style="font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:12px;color:var(--muted);line-height:1.55;margin:10px 0 0">Aiuta a stimare meglio il consumo. Puoi saltarlo.</p>
+              </div>
+            </div>
+            <div style="padding:16px 20px calc(16px + env(safe-area-inset-bottom));border-top:1px solid var(--line);flex:none">
+              <button style="appearance:none;border:none;cursor:pointer;width:100%;background:var(--primary);color:#fff;font-family:'Schibsted Grotesk',sans-serif;font-weight:600;font-size:15px;padding:16px;border-radius:var(--btn-radius)" onClick="{{ goPercorso }}">Continua</button>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ is2 }}">
+          <div data-screen-label="S2 Percorso" style="position:absolute;inset:0;display:flex;flex-direction:column;animation:scrn .34s cubic-bezier(0.16,1,0.3,1)">
+            <div style="height:54px;flex:none;display:flex;align-items:center;gap:10px;padding:0 12px;border-bottom:1px solid var(--line)">
+              <button style="appearance:none;background:var(--chip);border:none;color:var(--primary);width:34px;height:34px;border-radius:50%;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1" onClick="{{ goBack }}">‹</button>
+              <span style="flex:1;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)">Passo 2 / 4</span>
+              <span style="display:flex;gap:6px;align-items:center"><span style="width:7px;height:7px;border-radius:50%;background:var(--primary)"></span><span style="width:7px;height:7px;border-radius:50%;background:var(--primary)"></span><span style="width:7px;height:7px;border-radius:50%;background:var(--track)"></span><span style="width:7px;height:7px;border-radius:50%;background:var(--track)"></span></span>
+            </div>
+            <div style="flex:1;overflow-y:auto;padding:24px 22px 28px">
+              <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--primary)">Il cammino</div>
+              <h2 style="font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:25px;letter-spacing:-0.01em;color:var(--ink);margin:9px 0 0;line-height:1.1">Il tuo percorso</h2>
+              <p style="font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:14px;color:var(--muted);line-height:1.55;margin:10px 0 0">Inserisci i dati del cammino. Bastano distanza e dislivello.</p>
+
+              <div style="margin-top:20px">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:15px 0">
+                  <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:13px;color:var(--muted)">Distanza</span>
+                  <div style="display:flex;align-items:baseline;gap:8px"><input type="text" inputmode="numeric" value="18" style="background:transparent;border:none;outline:none;text-align:right;color:var(--ink);font-weight:600;font-size:20px;width:50px"><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:13px;color:var(--muted);min-width:34px">km</span></div>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:15px 0">
+                  <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:13px;color:var(--muted)">Dislivello +</span>
+                  <div style="display:flex;align-items:baseline;gap:8px"><input type="text" inputmode="numeric" value="1100" style="background:transparent;border:none;outline:none;text-align:right;color:var(--ink);font-weight:600;font-size:20px;width:58px"><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:13px;color:var(--muted);min-width:34px">m</span></div>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:15px 0">
+                  <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:13px;color:var(--muted)">Durata</span>
+                  <div style="display:flex;align-items:baseline;gap:8px"><input type="text" inputmode="numeric" value="2" style="background:transparent;border:none;outline:none;text-align:right;color:var(--ink);font-weight:600;font-size:20px;width:38px"><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:13px;color:var(--muted);min-width:48px">giorni</span></div>
+                </div>
+              </div>
+
+              <div style="margin-top:22px">
+                <span style="display:block;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:13px;color:var(--muted);margin-bottom:10px">Terreno</span>
+                <div style="display:flex;gap:8px">
+                  <sc-for list="{{ terrenoOpts }}" as="o" hint-placeholder-count="3"><button style="{{ o.style }}" onClick="{{ o.onClick }}">{{ o.label }}</button></sc-for>
+                </div>
+                <p style="font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:12px;color:var(--muted);line-height:1.55;margin:10px 0 0">Più il terreno è difficile, più consumi a parità di passo.</p>
+              </div>
+
+              <div style="margin-top:20px;border:1px solid var(--line);border-radius:var(--radius);padding:16px;background:var(--surface)">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+                  <div style="display:flex;align-items:center;gap:10px">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.6"><path d="M6 9a6 6 0 0 1 12 0v11H6z"></path><path d="M9.5 9V7a2.5 2.5 0 0 1 5 0v2"></path><path d="M6 13h12"></path></svg>
+                    <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:13px;color:var(--ink)">Peso zaino</span>
+                  </div>
+                  <div style="display:flex;align-items:baseline;gap:8px"><input type="text" inputmode="numeric" value="9" style="background:transparent;border:none;outline:none;text-align:right;color:var(--ink);font-weight:600;font-size:20px;width:38px"><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:13px;color:var(--muted);min-width:24px">kg</span></div>
+                </div>
+                <p style="font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:12px;color:var(--muted);line-height:1.55;margin:11px 0 0">Il peso che porti incide molto sul consumo.</p>
+              </div>
+
+              <button style="display:flex;align-items:center;justify-content:space-between;width:100%;background:transparent;border:none;border-top:1px solid var(--line);padding:16px 0 14px;cursor:pointer;margin-top:18px" onClick="{{ toggleAdv }}">
+                <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:13px;color:var(--muted)">Avanzate · opzionale</span>
+                <span style="color:var(--primary);font-size:18px;font-weight:600;line-height:1">{{ chevAdv }}</span>
+              </button>
+              <sc-if value="{{ advOpen }}">
+                <div style="display:flex;flex-direction:column;gap:2px">
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:13px 0">
+                    <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:13px;color:var(--muted)">Passo medio</span>
+                    <div style="display:flex;align-items:baseline;gap:8px"><input type="text" inputmode="numeric" value="12" style="background:transparent;border:none;outline:none;text-align:right;color:var(--ink);font-weight:600;font-size:18px;width:40px"><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:12px;color:var(--muted);min-width:46px">min/km</span></div>
+                  </div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:13px 0">
+                    <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:13px;color:var(--muted)">Quota media</span>
+                    <div style="display:flex;align-items:baseline;gap:8px"><input type="text" inputmode="numeric" value="1400" style="background:transparent;border:none;outline:none;text-align:right;color:var(--ink);font-weight:600;font-size:18px;width:54px"><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:12px;color:var(--muted);min-width:20px">m</span></div>
+                  </div>
+                  <div style="padding:14px 0 4px">
+                    <span style="display:block;font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:12px;color:var(--muted);margin-bottom:10px">Stagione</span>
+                    <div style="display:flex;gap:8px">
+                      <sc-for list="{{ stagOpts }}" as="o" hint-placeholder-count="3"><button style="{{ o.style }}" onClick="{{ o.onClick }}">{{ o.label }}</button></sc-for>
+                    </div>
+                  </div>
+                </div>
+              </sc-if>
+
+              <div style="display:flex;align-items:center;justify-content:space-between;border:1px dashed var(--line);border-radius:var(--radius-sm);padding:13px 14px;margin-top:16px;opacity:0.7">
+                <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:13px;color:var(--muted)">Importa traccia GPX</span>
+                <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:var(--primary);background:var(--accent-soft);padding:3px 8px;border-radius:999px">Presto</span>
+              </div>
+            </div>
+            <div style="padding:16px 20px calc(16px + env(safe-area-inset-bottom));border-top:1px solid var(--line);flex:none">
+              <button style="appearance:none;border:none;cursor:pointer;width:100%;background:var(--primary);color:#fff;font-family:'Schibsted Grotesk',sans-serif;font-weight:600;font-size:15px;padding:16px;border-radius:var(--btn-radius)" onClick="{{ doCalcola }}">Calcola</button>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ is3 }}">
+          <div data-screen-label="S3 Risultato" style="position:absolute;inset:0;display:flex;flex-direction:column;animation:scrn .34s cubic-bezier(0.16,1,0.3,1)">
+            <div style="height:54px;flex:none;display:flex;align-items:center;gap:10px;padding:0 12px;border-bottom:1px solid var(--line)">
+              <button style="appearance:none;background:var(--chip);border:none;color:var(--primary);width:34px;height:34px;border-radius:50%;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1" onClick="{{ goBack }}">‹</button>
+              <span style="flex:1;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)">Passo 3 / 4</span>
+              <span style="display:flex;gap:6px;align-items:center"><span style="width:7px;height:7px;border-radius:50%;background:var(--primary)"></span><span style="width:7px;height:7px;border-radius:50%;background:var(--primary)"></span><span style="width:7px;height:7px;border-radius:50%;background:var(--primary)"></span><span style="width:7px;height:7px;border-radius:50%;background:var(--track)"></span></span>
+            </div>
+            <div style="flex:1;overflow-y:auto;padding:24px 22px 28px">
+              <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--primary)">Risultato</div>
+              <h2 style="font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:25px;letter-spacing:-0.01em;color:var(--ink);margin:9px 0 0;line-height:1.1">Quanto consumi</h2>
+
+              <div style="background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin-top:18px">
+                <div style="display:flex;align-items:flex-start;gap:14px">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linejoin="round" style="margin-top:6px"><path d="M12 2s4.2 4 4.2 8.2A4.2 4.2 0 0 1 12 14.4a3.1 3.1 0 0 1-3.1-3.1c0-.6.2-1.1.6-1.6.2 1 .9 1.9 1.8 2.4-.4-2 .3-4.5 1.7-9.1z"></path><path d="M7.5 13a5.5 5.5 0 1 0 9.6 3.7"></path></svg>
+                  <div>
+                    <div style="font-family:'Schibsted Grotesk',sans-serif;font-weight:800;font-size:50px;letter-spacing:-0.02em;color:var(--primary);line-height:0.9">4.180</div>
+                    <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:12px;color:var(--muted);margin-top:8px">kcal totali · stima</div>
+                  </div>
+                </div>
+                <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:13px;color:var(--muted);margin-top:14px;border-top:1px solid var(--line);padding-top:12px">Intervallo 3.760 – 4.600 kcal</div>
+              </div>
+
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px">
+                <div style="border:1px solid var(--line);background:var(--surface);border-radius:var(--radius);padding:16px">
+                  <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)">Al giorno</div>
+                  <div style="font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:26px;color:var(--ink);margin-top:8px;line-height:1">~2.090</div>
+                  <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:12px;color:var(--muted);margin-top:3px">kcal</div>
+                </div>
+                <div style="border:1px solid var(--line);background:var(--surface);border-radius:var(--radius);padding:16px">
+                  <div style="display:flex;align-items:center;gap:6px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--water)" stroke-width="1.6"><path d="M12 3.5C12 3.5 6 9.5 6 14a6 6 0 0 0 12 0c0-4.5-6-10.5-6-10.5z"></path></svg><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)">Acqua / g</span></div>
+                  <div style="font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:26px;color:var(--ink);margin-top:8px;line-height:1">2,5–3</div>
+                  <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:12px;color:var(--muted);margin-top:3px">litri</div>
+                </div>
+              </div>
+
+              <button style="display:flex;align-items:center;justify-content:space-between;width:100%;background:transparent;border:none;border-top:1px solid var(--line);padding:16px 0 14px;cursor:pointer;margin-top:20px" onClick="{{ toggleCalc }}">
+                <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:13px;color:var(--muted)">Come l'abbiamo calcolato</span>
+                <span style="color:var(--primary);font-size:18px;font-weight:600;line-height:1">{{ chevCalc }}</span>
+              </button>
+              <sc-if value="{{ calcOpen }}">
+                <p style="font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:13px;color:var(--muted);line-height:1.65;margin:0 0 4px">Usiamo modelli riconosciuti — <span style="color:var(--primary);font-weight:600">Pandolf</span> e <span style="color:var(--primary);font-weight:600">Mifflin-St Jeor</span> — su peso, zaino, dislivello e terreno. È una stima (±10%): usala come guida, non come valore esatto.</p>
+              </sc-if>
+
+              <p style="font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:11px;color:var(--muted);line-height:1.6;margin:20px 0 0;border-top:1px solid var(--line);padding-top:14px;opacity:0.8">Le stime sono indicative e non sostituiscono il parere di un medico o nutrizionista.</p>
+            </div>
+            <div style="padding:16px 20px calc(16px + env(safe-area-inset-bottom));border-top:1px solid var(--line);flex:none">
+              <button style="appearance:none;border:none;cursor:pointer;width:100%;background:var(--primary);color:#fff;font-family:'Schibsted Grotesk',sans-serif;font-weight:600;font-size:15px;padding:16px;border-radius:var(--btn-radius)" onClick="{{ goCibo }}">Cosa mangio?</button>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ is4 }}">
+          <div data-screen-label="S4 Cosa mangiare" style="position:absolute;inset:0;display:flex;flex-direction:column;animation:scrn .34s cubic-bezier(0.16,1,0.3,1)">
+            <div style="height:54px;flex:none;display:flex;align-items:center;gap:10px;padding:0 12px;border-bottom:1px solid var(--line)">
+              <button style="appearance:none;background:var(--chip);border:none;color:var(--primary);width:34px;height:34px;border-radius:50%;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1" onClick="{{ goBack }}">‹</button>
+              <span style="flex:1;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)">Passo 4 / 4</span>
+              <span style="display:flex;gap:6px;align-items:center"><span style="width:7px;height:7px;border-radius:50%;background:var(--primary)"></span><span style="width:7px;height:7px;border-radius:50%;background:var(--primary)"></span><span style="width:7px;height:7px;border-radius:50%;background:var(--primary)"></span><span style="width:7px;height:7px;border-radius:50%;background:var(--primary)"></span></span>
+            </div>
+            <div style="flex:1;overflow-y:auto;padding:24px 22px 28px">
+              <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--primary)">Nutrizione</div>
+              <h2 style="font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:25px;letter-spacing:-0.01em;color:var(--ink);margin:9px 0 0;line-height:1.1">Cosa mangiare</h2>
+
+              <div style="display:flex;align-items:baseline;gap:10px;margin-top:16px">
+                <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:12px;color:var(--muted)">Obiettivo</span>
+                <span style="font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:22px;color:var(--primary)">2.090</span>
+                <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:12px;color:var(--muted)">kcal / giorno</span>
+              </div>
+
+              <div style="border:1px solid var(--line);background:var(--surface);border-radius:var(--radius);padding:18px;margin-top:16px;display:flex;flex-direction:column;gap:14px">
+                <div>
+                  <div style="display:flex;justify-content:space-between;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:12.5px;color:var(--ink);margin-bottom:7px"><span>Carboidrati</span><span style="color:var(--primary)">55%</span></div>
+                  <div style="height:7px;background:var(--track);border-radius:999px;overflow:hidden"><div style="width:55%;height:100%;background:var(--primary);border-radius:999px"></div></div>
+                </div>
+                <div>
+                  <div style="display:flex;justify-content:space-between;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:12.5px;color:var(--ink);margin-bottom:7px"><span>Grassi</span><span style="color:var(--accent)">30%</span></div>
+                  <div style="height:7px;background:var(--track);border-radius:999px;overflow:hidden"><div style="width:30%;height:100%;background:var(--accent);border-radius:999px"></div></div>
+                </div>
+                <div>
+                  <div style="display:flex;justify-content:space-between;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:12.5px;color:var(--ink);margin-bottom:7px"><span>Proteine</span><span style="color:var(--water)">15%</span></div>
+                  <div style="height:7px;background:var(--track);border-radius:999px;overflow:hidden"><div style="width:15%;height:100%;background:var(--water);border-radius:999px"></div></div>
+                </div>
+              </div>
+
+              <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin:22px 0 4px">Per categoria · al giorno</div>
+              <div>
+                <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line)"><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:14px;color:var(--ink)">Grassi densi</span><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:12.5px;color:var(--muted)">~110 g · 640 kcal</span></div>
+                <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line)"><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:14px;color:var(--ink)">Carboidrati lenti</span><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:12.5px;color:var(--muted)">~200 g · 740 kcal</span></div>
+                <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line)"><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:14px;color:var(--ink)">Carboidrati rapidi</span><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:12.5px;color:var(--muted)">~120 g · 410 kcal</span></div>
+                <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line)"><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:14px;color:var(--ink)">Proteine</span><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:12.5px;color:var(--muted)">~90 g · 290 kcal</span></div>
+                <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 0"><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:14px;color:var(--ink)">Snack salati</span><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:12.5px;color:var(--muted)">a piacere</span></div>
+              </div>
+
+              <div style="display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);padding:13px 14px;margin-top:8px">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.6"><path d="M6 9a6 6 0 0 1 12 0v11H6z"></path><path d="M9.5 9V7a2.5 2.5 0 0 1 5 0v2"></path><path d="M6 13h12"></path></svg>
+                <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:13px;color:var(--ink)">Peso cibo</span>
+                <span style="margin-left:auto;font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:15px;color:var(--primary)">~520 g / giorno</span>
+              </div>
+
+              <div style="background:var(--accent-soft);border-radius:var(--radius-sm);padding:14px;margin-top:16px">
+                <p style="font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:12.5px;color:var(--ink);line-height:1.6;margin:0"><span style="font-weight:700">Tip ·</span> Punta a cibi sopra ~450 kcal/100 g: a parità di energia pesano meno nello zaino.</p>
+              </div>
+
+              <div style="background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin-top:16px">
+                <div style="display:flex;align-items:center;gap:9px;margin-bottom:8px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.6"><rect x="5" y="11" width="14" height="9" rx="1"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--primary)">Premium</span></div>
+                <p style="font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:13px;color:var(--muted);line-height:1.55;margin:0">Vuoi il <span style="color:var(--ink);font-weight:600">menu pronto</span> giorno per giorno, la <span style="color:var(--ink);font-weight:600">lista della spesa</span> e l'ottimizzazione dello <span style="color:var(--ink);font-weight:600">spazio</span>?</p>
+              </div>
+            </div>
+            <div style="padding:16px 20px calc(16px + env(safe-area-inset-bottom));border-top:1px solid var(--line);flex:none;display:flex;flex-direction:column;gap:10px">
+              <button style="appearance:none;border:none;cursor:pointer;width:100%;background:var(--primary);color:#fff;font-family:'Schibsted Grotesk',sans-serif;font-weight:600;font-size:15px;padding:16px;border-radius:var(--btn-radius)" onClick="{{ goPremium }}">Scopri Premium</button>
+              <button style="appearance:none;cursor:pointer;width:100%;background:transparent;color:var(--primary);border:1.5px solid var(--primary);font-family:'Schibsted Grotesk',sans-serif;font-weight:600;font-size:14px;padding:12px;border-radius:var(--btn-radius)" onClick="{{ goRiepilogo }}">Vedi riepilogo</button>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ is5 }}">
+          <div data-screen-label="S5 Riepilogo" style="position:absolute;inset:0;display:flex;flex-direction:column;animation:scrn .34s cubic-bezier(0.16,1,0.3,1)">
+            <div style="height:54px;flex:none;display:flex;align-items:center;gap:10px;padding:0 12px;border-bottom:1px solid var(--line)">
+              <button style="appearance:none;background:var(--chip);border:none;color:var(--primary);width:34px;height:34px;border-radius:50%;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1" onClick="{{ goBack }}">‹</button>
+              <span style="flex:1;font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:14px;color:var(--ink)">Riepilogo</span>
+            </div>
+            <div style="flex:1;overflow-y:auto;padding:24px 22px 28px">
+              <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--primary)">Il tuo piano</div>
+              <h2 style="font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:26px;letter-spacing:-0.01em;color:var(--ink);margin:9px 0 0;line-height:1.1">18 km · 2 giorni</h2>
+
+              <div style="background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:18px">
+                <div style="display:flex;align-items:center;gap:12px;padding:15px 16px;border-bottom:1px solid var(--line)">
+                  <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linejoin="round"><path d="M12 2s4.2 4 4.2 8.2A4.2 4.2 0 0 1 12 14.4a3.1 3.1 0 0 1-3.1-3.1c0-.6.2-1.1.6-1.6.2 1 .9 1.9 1.8 2.4-.4-2 .3-4.5 1.7-9.1z"></path><path d="M7.5 13a5.5 5.5 0 1 0 9.6 3.7"></path></svg>
+                  <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:13px;color:var(--muted)">Energia totale</span>
+                  <span style="margin-left:auto;font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:16px;color:var(--ink)">4.180 kcal</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:12px;padding:15px 16px;border-bottom:1px solid var(--line)">
+                  <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5"><path d="M6 9a6 6 0 0 1 12 0v11H6z"></path><path d="M9.5 9V7a2.5 2.5 0 0 1 5 0v2"></path><path d="M6 13h12"></path></svg>
+                  <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:13px;color:var(--muted)">Cibo da portare</span>
+                  <span style="margin-left:auto;font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:16px;color:var(--ink)">~1,0 kg</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:12px;padding:15px 16px">
+                  <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--water)" stroke-width="1.5"><path d="M12 3.5C12 3.5 6 9.5 6 14a6 6 0 0 0 12 0c0-4.5-6-10.5-6-10.5z"></path></svg>
+                  <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:13px;color:var(--muted)">Acqua totale</span>
+                  <span style="margin-left:auto;font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:16px;color:var(--ink)">~5–6 L</span>
+                </div>
+              </div>
+
+              <div style="display:flex;gap:8px;margin-top:14px">
+                <span style="flex:1;text-align:center;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:11px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);padding:10px 4px">Carbo 55</span>
+                <span style="flex:1;text-align:center;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:11px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);padding:10px 4px">Grassi 30</span>
+                <span style="flex:1;text-align:center;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:11px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);padding:10px 4px">Prot 15</span>
+              </div>
+
+              <div style="border-left:3px solid var(--accent);padding:2px 0 2px 14px;margin-top:20px">
+                <p style="font-family:'Hanken Grotesk',sans-serif;font-style:italic;font-weight:400;font-size:13.5px;color:var(--muted);line-height:1.55;margin:0">"Il mio piano nutrizionale per 18 km e 1100 m di dislivello: 4.180 kcal e ~1,0 kg di cibo. Calcolato con Kcalibro."</p>
+              </div>
+
+              <div style="background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin-top:20px">
+                <div style="display:flex;align-items:center;gap:9px;margin-bottom:8px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M12 3l1.6 5.4L19 10l-5.4 1.6L12 17l-1.6-5.4L5 10l5.4-1.6z"></path></svg><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--primary)">Premium</span></div>
+                <p style="font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:13px;color:var(--muted);line-height:1.55;margin:0 0 13px">Passa a Premium per il menu giorno-per-giorno e la lista della spesa.</p>
+                <button style="appearance:none;cursor:pointer;width:100%;background:transparent;color:var(--primary);border:1.5px solid var(--primary);font-family:'Schibsted Grotesk',sans-serif;font-weight:600;font-size:13px;padding:11px;border-radius:var(--btn-radius)" onClick="{{ goPremium }}">Scopri Premium</button>
+              </div>
+            </div>
+            <div style="padding:16px 20px calc(16px + env(safe-area-inset-bottom));border-top:1px solid var(--line);flex:none;display:flex;gap:10px">
+              <button style="appearance:none;border:none;cursor:pointer;flex:1;background:var(--primary);color:#fff;font-family:'Schibsted Grotesk',sans-serif;font-weight:600;font-size:14px;padding:15px;border-radius:var(--btn-radius)" onClick="{{ condividi }}">Condividi</button>
+              <button style="appearance:none;cursor:pointer;flex:1;background:transparent;color:var(--primary);border:1.5px solid var(--primary);font-family:'Schibsted Grotesk',sans-serif;font-weight:600;font-size:14px;padding:15px;border-radius:var(--btn-radius)" onClick="{{ salva }}">Salva</button>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ is6 }}">
+          <div data-screen-label="S6 Premium" style="position:absolute;inset:0;display:flex;flex-direction:column;animation:scrn .34s cubic-bezier(0.16,1,0.3,1)">
+            <div style="height:54px;flex:none;display:flex;align-items:center;gap:10px;padding:0 12px;border-bottom:1px solid var(--line)">
+              <button style="appearance:none;background:var(--chip);border:none;color:var(--primary);width:34px;height:34px;border-radius:50%;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1" onClick="{{ goBack }}">‹</button>
+              <span style="flex:1;font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:14px;color:var(--ink)">Premium</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.6"><rect x="5" y="11" width="14" height="9" rx="1"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>
+            </div>
+            <div style="flex:1;overflow-y:auto;padding:24px 22px 28px">
+              <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--primary)">Kcalibro Premium</div>
+              <h2 style="font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:25px;letter-spacing:-0.01em;color:var(--ink);margin:9px 0 0;line-height:1.1">Sblocca tutto il piano</h2>
+              <p style="font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:14px;color:var(--muted);line-height:1.55;margin:10px 0 0">Menu pronti, lista della spesa e ottimizzazione dello spazio nello zaino.</p>
+
+              <div style="border:1px solid var(--line);background:var(--surface);border-radius:var(--radius);position:relative;overflow:hidden;margin-top:20px">
+                <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 15px;border-bottom:1px solid var(--line)"><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:12px;color:var(--ink)">Menu · Giorno 1</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.6"><rect x="5" y="11" width="14" height="9" rx="1"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></div>
+                <div style="padding:15px;filter:blur(3px);opacity:0.45;pointer-events:none;display:flex;flex-direction:column;gap:11px">
+                  <div style="display:flex;justify-content:space-between;font-size:12.5px;color:var(--ink)"><span>Colazione · Porridge + noci</span><span>520 kcal</span></div>
+                  <div style="display:flex;justify-content:space-between;font-size:12.5px;color:var(--ink)"><span>Pranzo · Crackers + bresaola</span><span>610 kcal</span></div>
+                  <div style="display:flex;justify-content:space-between;font-size:12.5px;color:var(--ink)"><span>Cena · Liofilizzato pasta</span><span>640 kcal</span></div>
+                  <div style="display:flex;justify-content:space-between;font-size:12.5px;color:var(--ink)"><span>Snack · Barretta + cioccolato</span><span>320 kcal</span></div>
+                </div>
+                <div style="position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 13px;box-shadow:0 4px 14px rgba(0,0,0,0.08)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.8"><rect x="5" y="11" width="14" height="9" rx="1"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.04em;color:var(--primary)">Disponibile con Premium</span></div>
+              </div>
+
+              <div style="border:1px solid var(--line);background:var(--surface);border-radius:var(--radius);position:relative;overflow:hidden;margin-top:14px">
+                <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 15px;border-bottom:1px solid var(--line)"><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:12px;color:var(--ink)">Lista della spesa</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.6"><rect x="5" y="11" width="14" height="9" rx="1"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></div>
+                <div style="padding:15px;filter:blur(3px);opacity:0.45;pointer-events:none;display:flex;flex-direction:column;gap:11px">
+                  <div style="display:flex;justify-content:space-between;font-size:12.5px;color:var(--ink)"><span>☐ Frutta secca mix</span><span>300 g</span></div>
+                  <div style="display:flex;justify-content:space-between;font-size:12.5px;color:var(--ink)"><span>☐ Cioccolato fondente</span><span>200 g</span></div>
+                  <div style="display:flex;justify-content:space-between;font-size:12.5px;color:var(--ink)"><span>☐ Cous cous</span><span>250 g</span></div>
+                </div>
+                <div style="position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 13px;box-shadow:0 4px 14px rgba(0,0,0,0.08)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.8"><rect x="5" y="11" width="14" height="9" rx="1"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.04em;color:var(--primary)">Disponibile con Premium</span></div>
+              </div>
+
+              <div style="border:1px solid var(--line);background:var(--surface);border-radius:var(--radius);position:relative;overflow:hidden;margin-top:14px">
+                <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 15px;border-bottom:1px solid var(--line)"><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:12px;color:var(--ink)">Spazio nello zaino</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.6"><rect x="5" y="11" width="14" height="9" rx="1"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></div>
+                <div style="padding:15px;filter:blur(3px);opacity:0.45;pointer-events:none;display:flex;flex-direction:column;gap:12px">
+                  <div style="display:flex;justify-content:space-between;font-size:12.5px;color:var(--ink)"><span>Volume cibo</span><span>~1,1 L / giorno</span></div>
+                  <div style="font-size:11.5px;color:var(--muted)">Sostituendo 1 liofilizzato con grassi densi: −0,2 L</div>
+                  <div style="display:flex;gap:10px"><span style="flex:1;height:7px;background:var(--track);border-radius:999px;overflow:hidden"><span style="display:block;width:80%;height:100%;background:var(--primary)"></span></span><span style="flex:1;height:7px;background:var(--track);border-radius:999px;overflow:hidden"><span style="display:block;width:40%;height:100%;background:var(--accent)"></span></span></div>
+                </div>
+                <div style="position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 13px;box-shadow:0 4px 14px rgba(0,0,0,0.08)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.8"><rect x="5" y="11" width="14" height="9" rx="1"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.04em;color:var(--primary)">Disponibile con Premium</span></div>
+              </div>
+
+              <div style="margin-top:24px;display:flex;flex-direction:column;gap:11px">
+                <div style="display:flex;gap:11px;align-items:flex-start"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="flex:none;margin-top:1px"><path d="M5 12l4.5 4.5L19 7"></path></svg><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:13px;color:var(--ink);line-height:1.5">Menu pronti giorno per giorno con prodotti reali</span></div>
+                <div style="display:flex;gap:11px;align-items:flex-start"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="flex:none;margin-top:1px"><path d="M5 12l4.5 4.5L19 7"></path></svg><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:13px;color:var(--ink);line-height:1.5">Lista della spesa automatica</span></div>
+                <div style="display:flex;gap:11px;align-items:flex-start"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="flex:none;margin-top:1px"><path d="M5 12l4.5 4.5L19 7"></path></svg><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:13px;color:var(--ink);line-height:1.5">Ottimizzazione dello spazio, non solo del peso</span></div>
+                <div style="display:flex;gap:11px;align-items:flex-start"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="flex:none;margin-top:1px"><path d="M5 12l4.5 4.5L19 7"></path></svg><span style="font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:13px;color:var(--ink);line-height:1.5">Diete e allergie, percorsi salvati, consigli della guida</span></div>
+              </div>
+
+              <div style="display:flex;flex-direction:column;gap:10px;margin-top:22px">
+                <button style="{{ planAStyle }}" onClick="{{ setPlanA }}">
+                  <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:14px;color:var(--ink)">Premium</span><span style="font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:16px;color:var(--primary)">4,99 € <span style="font-weight:400;font-size:11px;color:var(--muted)">/ mese</span></span></div>
+                  <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:11.5px;color:var(--muted);margin-top:6px">oppure 29,99 € / anno · risparmi ~50%</div>
+                </button>
+                <button style="{{ planBStyle }}" onClick="{{ setPlanB }}">
+                  <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:14px;color:var(--ink)">Solo questo cammino</span><span style="font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:16px;color:var(--primary)">2,99 €</span></div>
+                  <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:11.5px;color:var(--muted);margin-top:6px">Pass singolo, nessun abbonamento</div>
+                </button>
+              </div>
+            </div>
+            <div style="padding:14px 20px calc(14px + env(safe-area-inset-bottom));border-top:1px solid var(--line);flex:none;display:flex;flex-direction:column;gap:10px">
+              <button style="appearance:none;border:none;cursor:pointer;width:100%;background:var(--primary);color:#fff;font-family:'Schibsted Grotesk',sans-serif;font-weight:600;font-size:15px;padding:16px;border-radius:var(--btn-radius)" onClick="{{ sbloccaPremium }}">Sblocca con Premium</button>
+              <p style="font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:11px;color:var(--muted);text-align:center;margin:0">Disdici quando vuoi. Nessun rinnovo nascosto.</p>
+            </div>
+          </div>
+        </sc-if>
+
+      </div>
+
+      <sc-if value="{{ loading }}">
+        <div style="position:absolute;inset:0;z-index:60;background:rgba(255,255,255,0.85);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;backdrop-filter:blur(3px)">
+          <div style="width:38px;height:38px;border:3px solid var(--track);border-top-color:var(--primary);border-radius:50%;animation:spin .8s linear infinite"></div>
+          <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:13px;color:var(--ink)">Sto calcolando il tuo piano…</span>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ toastShown }}">
+        <div style="position:absolute;left:50%;bottom:96px;transform:translateX(-50%);z-index:70;background:var(--ink);color:#fff;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:12.5px;padding:11px 20px;border-radius:999px;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,0.2);animation:scrn .25s ease">{{ toast }}</div>
+      </sc-if>
+
+    </div>
+  </div>
+
+  <sc-if value="{{ showChrome }}">
+    <div style="margin-top:18px;font-family:'Hanken Grotesk',sans-serif;font-weight:400;font-size:12px;color:rgba(40,44,38,0.55);text-align:center;max-width:380px;line-height:1.6">Tocca i pulsanti o le tab in alto per navigare il flusso. Cambia stile con <span style="font-weight:600">Bosco / Pietra</span>.</div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showChrome&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;startVariant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;bosco&quot;,&quot;pietra&quot;],&quot;default&quot;:&quot;bosco&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;startScreen&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;0&quot;,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;],&quot;default&quot;:&quot;0&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { screen:0, variant:'bosco', advOpen:false, calcOpen:false, loading:false, plan:'annual', sesso:'Uomo', allen:'Medio', terreno:'Misto', stag:'Mite', toast:'' };
+
+  H = {
+    bosco:  { bg:'#F3F0E7', surface:'#FFFFFF', ink:'#1F2A22', muted:'#5E6B60', primary:'#2F5D45', primaryDeep:'#224536', accent:'#C18A3D', accentSoft:'#EAD9BC', line:'rgba(31,42,34,0.13)', track:'#E7E2D5', water:'#3C7A8C', chip:'#ECE7DA', radius:'16px', radiusSm:'12px', btn:'12px' },
+    pietra: { bg:'#ECEEF0', surface:'#FFFFFF', ink:'#232B30', muted:'#5F6970', primary:'#2C6E9A', primaryDeep:'#1F5273', accent:'#DE7A3C', accentSoft:'#F4DAC6', line:'rgba(35,43,48,0.13)', track:'#E2E6E9', water:'#2C6E9A', chip:'#E4E8EB', radius:'10px', radiusSm:'8px', btn:'9px' }
+  };
+
+  componentDidMount(){
+    const p = this.props.startScreen;
+    if (p != null && p !== '') { const n = parseInt(p, 10); if (!isNaN(n)) this.setState({ screen: Math.max(0, Math.min(6, n)) }); }
+    if (this.props.startVariant === 'bosco' || this.props.startVariant === 'pietra') this.setState({ variant: this.props.startVariant });
+  }
+
+  go(n){ this.setState({ screen: Math.max(0, Math.min(6, n)) }); }
+  doCalcola(){ this.setState({ loading:true }); clearTimeout(this._c); this._c = setTimeout(()=>this.setState({ loading:false, screen:3 }), 1500); }
+  notify(m){ this.setState({ toast:m }); clearTimeout(this._t); this._t = setTimeout(()=>this.setState({ toast:'' }), 2200); }
+
+  renderVals(){
+    const s = this.state.screen;
+    const v = this.state.variant;
+    const h = this.H[v];
+
+    const themeVars = {
+      '--bg':h.bg, '--surface':h.surface, '--ink':h.ink, '--muted':h.muted, '--primary':h.primary, '--primary-deep':h.primaryDeep,
+      '--accent':h.accent, '--accent-soft':h.accentSoft, '--line':h.line, '--track':h.track, '--water':h.water, '--chip':h.chip,
+      '--radius':h.radius, '--radius-sm':h.radiusSm, '--btn-radius':h.btn,
+      width:'100%', height:'100%', borderRadius:'35px', overflow:'hidden', position:'relative',
+      display:'flex', flexDirection:'column', background:h.bg, color:h.ink, fontFamily:"'Hanken Grotesk',system-ui,sans-serif"
+    };
+
+    const seg = (a)=>({ flex:1, appearance:'none', cursor:'pointer', padding:'11px 6px', fontFamily:"'Hanken Grotesk',sans-serif", fontWeight:600, fontSize:'12.5px', border:'1px solid '+(a?h.primary:h.line), background:a?h.primary:'transparent', color:a?'#fff':h.muted, borderRadius:h.radiusSm, transition:'all .2s' });
+    const mk = (arr,key)=>arr.map(o=>({ label:o, onClick:()=>this.setState({ [key]:o }), style:seg(this.state[key]===o) }));
+
+    const tabLabels = ['00 · Welcome','01 · Profilo','02 · Percorso','03 · Risultato','04 · Cibo','05 · Riepilogo','06 · Premium'];
+    const tabs = tabLabels.map((label,i)=>{ const a=s===i; return { label, onClick:()=>this.go(i), style:{ appearance:'none', cursor:'pointer', whiteSpace:'nowrap', padding:'7px 11px', fontFamily:"'Hanken Grotesk',sans-serif", fontWeight:600, fontSize:'10.5px', letterSpacing:'0.02em', border:'1px solid '+(a?h.primary:'rgba(40,44,38,0.14)'), background:a?h.primary:'#FFFFFF', color:a?'#fff':'rgba(40,44,38,0.55)', borderRadius:'999px' } }; });
+
+    const vbtn = (on)=>({ appearance:'none', cursor:'pointer', padding:'7px 15px', fontFamily:"'Hanken Grotesk',sans-serif", fontWeight:600, fontSize:'12.5px', border:'none', borderRadius:'999px', background:on?h.primary:'transparent', color:on?'#fff':'rgba(40,44,38,0.55)', transition:'all .2s' });
+
+    const plan = (on)=>({ display:'block', width:'100%', textAlign:'left', cursor:'pointer', border:'2px solid '+(on?h.primary:h.line), background:on?h.accentSoft:h.surface, padding:'15px', borderRadius:h.radius, position:'relative', transition:'all .2s' });
+
+    const go = n => ()=>this.go(n);
+    return {
+      themeVars, tabs,
+      boscoStyle: vbtn(v==='bosco'), pietraStyle: vbtn(v==='pietra'),
+      setBosco: ()=>this.setState({ variant:'bosco' }), setPietra: ()=>this.setState({ variant:'pietra' }),
+      showChrome: this.props.showChrome !== false,
+      is0:s===0, is1:s===1, is2:s===2, is3:s===3, is4:s===4, is5:s===5, is6:s===6,
+      sessoOpts: mk(['Donna','Uomo','Altro'],'sesso'),
+      allenOpts: mk(['Basso','Medio','Alto'],'allen'),
+      terrenoOpts: mk(['Battuto','Misto','Impervio'],'terreno'),
+      stagOpts: mk(['Freddo','Mite','Caldo'],'stag'),
+      goProfilo: go(1), goPercorso: go(2), goCibo: go(4), goRiepilogo: go(5), goPremium: go(6),
+      goBack: ()=>this.go(s-1),
+      doCalcola: ()=>this.doCalcola(),
+      advOpen: this.state.advOpen, toggleAdv: ()=>this.setState(p=>({ advOpen:!p.advOpen })), chevAdv: this.state.advOpen?'−':'+',
+      calcOpen: this.state.calcOpen, toggleCalc: ()=>this.setState(p=>({ calcOpen:!p.calcOpen })), chevCalc: this.state.calcOpen?'−':'+',
+      loading: this.state.loading, toast: this.state.toast, toastShown: !!this.state.toast,
+      salva: ()=>this.notify('Piano salvato.'), condividi: ()=>this.notify('Condivisione pronta.'),
+      sbloccaPremium: ()=>this.notify('Checkout Premium · demo'),
+      planAStyle: plan(this.state.plan==='annual'), planBStyle: plan(this.state.plan==='walk'),
+      setPlanA: ()=>this.setState({ plan:'annual' }), setPlanB: ()=>this.setState({ plan:'walk' })
+    };
+  }
+}
+</script>
+</body>
+</html>

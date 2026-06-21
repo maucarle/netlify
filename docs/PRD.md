@@ -226,3 +226,121 @@ Questa fase produce un **documento**, non codice; la "verifica" è di prodotto:
    di Riccardo) per validare comprensibilità e percezione di valore.
 4. Solo dopo: definizione della parte tecnica (modello di calcolo, database
    alimenti, piattaforma) — **fuori scope ora**.
+
+---
+
+## 11. Naming (proposte)
+
+Criteri: corto, memorabile, evocativo di montagna/energia, pronunciabile in
+italiano, idealmente utilizzabile anche in inglese per i viaggi internazionali
+di Riccardo. **Tutti i nomi richiedono verifica di dominio e marchio prima della
+scelta** (vedi domande per Riccardo).
+
+| Nome | Idea | Pro | Contro |
+|---|---|---|---|
+| **Kcalibro** ⭐ | gioco di parole *kcal* + *calibro* ("calibra le tue calorie") | Distintivo, italiano, racconta esattamente la funzione, brandizzabile | Solo italiano (debole all'estero) |
+| **TrailFuel** | "carburante da sentiero" | Internazionale, chiaro, scalabile EN | Generico, possibili omonimie/dominio occupato |
+| **Vetta** | la cima | Pulito, positivo, italiano | Parola comune → marchio/dominio difficili |
+| **Cammino & Calorie** | descrittivo | Subito comprensibile, SEO | Lungo, poco "brand" |
+| **Zainity** | *zaino* + suffisso brand | Originale, richiama lo zaino | Suono ibrido IT/EN, ortografia da spiegare |
+| **Passo (Passo Energia)** | *passo* = step/valico | Evocativo, doppio senso (passo di montagna) | Generico da solo |
+
+**Raccomandazione:** partire con **Kcalibro** come brand principale (forte sul
+mercato italiano di lancio e racconta la promessa), tenendo **TrailFuel** come
+possibile nome internazionale futuro o tagline. Decisione finale a Riccardo dopo
+check dominio/marchio e suo gusto personale.
+
+---
+
+## 12. Modello di prezzo (ipotesi da validare)
+
+**Ancoraggio competitivo:** Backcountry Foodie ~36–72 $/anno (≈ 33–66 €), tutto
+a pagamento; Packstack core gratis. Il consumatore italiano è più sensibile al
+prezzo: posizionarsi **leggermente sotto** i competitor USA, con un **free
+generoso** che fa da acquisizione.
+
+| Piano | Prezzo (ipotesi) | Cosa include |
+|---|---|---|
+| **Free** | 0 € | Calcolo calorico personalizzato, fabbisogno macro/acqua, categorie di cibo con peso indicativo, 1 percorso alla volta (non salvato) |
+| **Pass Cammino** (one-time) | **2,99 €** sblocco singolo | Per il neofita occasionale: menu concreto + lista spesa + ottimizzazione peso per *un* trekking. Converte chi non vuole abbonarsi |
+| **Premium** (abbonamento) | **4,99 €/mese** o **29,99 €/anno** | Menu concreti illimitati, lista spesa, ottimizzazione **ingombro**, diete/allergie, percorsi salvati e storico, contenuti "firma Riccardo" |
+| **Pro / Guida** (roadmap B2B) | **~99–149 €/anno** | Pianificazione per gruppi, profili multipli, ripartizione carico, branding per la guida |
+
+**Logica:** il *Pass Cammino* abbassa la barriera (micro-acquisto) e fa da ponte
+verso l'abbonamento; l'**annuale scontato (~50%)** spinge la fidelizzazione;
+il piano **Pro** monetizza il canale guide in futuro. Prezzi da validare con
+test sulla disponibilità a pagare dei clienti reali di Riccardo (§9).
+
+---
+
+## 13. Categorie alimentari (bozza tassonomia MVP)
+
+Tassonomia per il suggerimento §4.5. Per ogni categoria: ruolo nutrizionale,
+esempi tipici reperibili in Italia/EU, densità calorica indicativa (kcal/100 g)
+e nota su peso/packability. **Da validare con Riccardo** (cosa usano davvero sui
+suoi trekking) e con un nutrizionista per i valori.
+
+| Categoria | Ruolo | Esempi IT/EU | kcal/100 g | Note |
+|---|---|---|---|---|
+| **Carboidrati rapidi** | Energia immediata durante lo sforzo | Gel, gelatine, frutta disidratata, barrette energetiche, miele | ~300–400 | Pratici "in marcia"; attenzione al peso/zuccheri |
+| **Carboidrati lenti** | Base energetica dei pasti | Cous cous/riso/pasta (anche liofilizzati), gallette, crackers, pane di segale | ~350–400 | Versioni disidratate = leggere; alcune richiedono fornello |
+| **Grassi calorico-densi** ⭐ | Massima energia per grammo (chiave "ultralight") | Frutta secca (noci, mandorle), burro di arachidi, cioccolato fondente, olio EVO in tubetto, formaggio stagionato | ~500–700 | I migliori per risparmiare peso; saziano |
+| **Proteine** | Recupero muscolare | Bresaola/carne secca, tonno in busta, legumi disidratati, formaggio, proteine in polvere | ~250–400 | Importanti nei multi-giorno |
+| **Pasti pronti / liofilizzati** | Cena calda completa | Piatti liofilizzati EU (es. marche outdoor europee) | variabile | Leggeri ma voluminosi e costosi; richiedono acqua calda |
+| **Snack salati / reintegro sali** | Sodio e palatabilità | Crackers, salatini, olive, frutta secca salata, parmigiano | ~400–550 | Combattono l'"affaticamento da dolce", reintegrano sodio |
+| **Idratazione & integratori** | Acqua, elettroliti, energia liquida | Sali/elettroliti, maltodestrine, tè/caffè/orzo solubile | n/a | Non solo cibo: gestione acqua e sali |
+
+⭐ I **grassi calorico-densi** sono la leva educativa principale: a parità di
+calorie pesano molto meno → cuore del messaggio "ottimizza il peso".
+
+---
+
+## 14. Fonti dati per il database alimenti (valori nutrizionali, allergeni, peso, volume)
+
+Da dove prendere i dati di prodotto. Sintesi per tipo di dato.
+
+### 14.1 Prodotti confezionati (marca, kcal, macro, **allergeni**, peso netto)
+- **OpenFoodFacts** ⭐ — fonte consigliata per il lancio. >3 mln prodotti, 200+
+  Paesi, buona copertura Italia/EU. API gratuita, senza autenticazione. Include
+  ingredienti, **allergeni** (tag EU), nutrienti, Nutri-Score/NOVA, immagini,
+  **quantità/peso netto**, barcode (utile per scansione futura).
+  ⚠️ **Licenza ODbL/DbCL (share-alike):** uso commerciale OK, ma i *miglioramenti*
+  al DB vanno ricondivisi. Dato crowd-sourced → qualità variabile, va validato.
+- **API commerciali** (alternativa/integrazione a pagamento):
+  - **FatSecret Platform** — migliore copertura **europea/multilingua** (26 lingue,
+    58 Paesi), allergeni e diete. Ha tier gratuito d'ingresso.
+  - **Edamam** (~299 $/mese), **Spoonacular** (~300 $/mese), **Nutritionix**
+    (~1.850 $/mese, focus USA). Più cari, meno necessari all'MVP.
+
+### 14.2 Alimenti "generici"/sfusi (frutta secca, formaggi, pasta…)
+- **CREA – Banca Dati Composizione Alimenti** (ex INRAN) — tabelle ufficiali
+  **italiane**, consultabili online. Autorevoli per i valori nutrizionali base.
+- **BDA-IEO** (studi epidemiologici) — file Excel su **donazione/licenza** il cui
+  importo dipende dall'uso commerciale → da contattare per i diritti.
+- **CIQUAL/ANSES** (Francia, aperto) e rete **EuroFIR** — utili per EU.
+- **USDA FoodData Central** — gratis ma USA, fallback per generici.
+
+### 14.3 Allergeni — quadro normativo
+- Riferimento UE: **Reg. 1169/2011**, lista dei **14 allergeni** obbligatori.
+  OpenFoodFacts già taggati su questa base → mappare su questi 14.
+
+### 14.4 Volume/ingombro (la feature premium difficile)
+**Nessun DB nutrizionale espone il volume in modo affidabile.** Opzioni:
+- **GS1 / GDSN (Global Data Model)** — standard ufficiale con **dimensioni
+  pacco** (altezza/larghezza/profondità, peso netto/lordo). È il sistema
+  produttori↔retailer: richiede membership GS1 / accesso a un data pool → oneroso.
+- **Approccio pragmatico consigliato per l'MVP/premium iniziale:**
+  1. stima il volume da **peso × densità** per categoria (es. frutta secca,
+     liofilizzati, barrette) — tabella di densità curata internamente;
+  2. per i top-prodotti, **curazione manuale** delle dimensioni dalla confezione
+     (schede prodotto retailer/produttore);
+  3. il dato esatto via GS1 solo se/quando il volume diventa core a pagamento.
+
+### 14.5 Strategia dati consigliata
+- **MVP (free, categorie):** non serve un DB prodotti pieno — basta una
+  **tabella curata di categorie** con kcal/100 g e densità medie (§13), derivabile
+  da CREA/OpenFoodFacts.
+- **Premium (menu concreti):** **OpenFoodFacts** come base prodotti EU + eventuale
+  **FatSecret** per copertura/qualità, + **curazione manuale** di un set di
+  prodotti "da trekking" (liofilizzati, barrette) con peso e **volume** stimato.
+- Verificare le **licenze** (ODbL share-alike; donazione BDA) prima di pubblicare.
