@@ -292,3 +292,55 @@ suoi trekking) e con un nutrizionista per i valori.
 
 ⭐ I **grassi calorico-densi** sono la leva educativa principale: a parità di
 calorie pesano molto meno → cuore del messaggio "ottimizza il peso".
+
+---
+
+## 14. Fonti dati per il database alimenti (valori nutrizionali, allergeni, peso, volume)
+
+Da dove prendere i dati di prodotto. Sintesi per tipo di dato.
+
+### 14.1 Prodotti confezionati (marca, kcal, macro, **allergeni**, peso netto)
+- **OpenFoodFacts** ⭐ — fonte consigliata per il lancio. >3 mln prodotti, 200+
+  Paesi, buona copertura Italia/EU. API gratuita, senza autenticazione. Include
+  ingredienti, **allergeni** (tag EU), nutrienti, Nutri-Score/NOVA, immagini,
+  **quantità/peso netto**, barcode (utile per scansione futura).
+  ⚠️ **Licenza ODbL/DbCL (share-alike):** uso commerciale OK, ma i *miglioramenti*
+  al DB vanno ricondivisi. Dato crowd-sourced → qualità variabile, va validato.
+- **API commerciali** (alternativa/integrazione a pagamento):
+  - **FatSecret Platform** — migliore copertura **europea/multilingua** (26 lingue,
+    58 Paesi), allergeni e diete. Ha tier gratuito d'ingresso.
+  - **Edamam** (~299 $/mese), **Spoonacular** (~300 $/mese), **Nutritionix**
+    (~1.850 $/mese, focus USA). Più cari, meno necessari all'MVP.
+
+### 14.2 Alimenti "generici"/sfusi (frutta secca, formaggi, pasta…)
+- **CREA – Banca Dati Composizione Alimenti** (ex INRAN) — tabelle ufficiali
+  **italiane**, consultabili online. Autorevoli per i valori nutrizionali base.
+- **BDA-IEO** (studi epidemiologici) — file Excel su **donazione/licenza** il cui
+  importo dipende dall'uso commerciale → da contattare per i diritti.
+- **CIQUAL/ANSES** (Francia, aperto) e rete **EuroFIR** — utili per EU.
+- **USDA FoodData Central** — gratis ma USA, fallback per generici.
+
+### 14.3 Allergeni — quadro normativo
+- Riferimento UE: **Reg. 1169/2011**, lista dei **14 allergeni** obbligatori.
+  OpenFoodFacts già taggati su questa base → mappare su questi 14.
+
+### 14.4 Volume/ingombro (la feature premium difficile)
+**Nessun DB nutrizionale espone il volume in modo affidabile.** Opzioni:
+- **GS1 / GDSN (Global Data Model)** — standard ufficiale con **dimensioni
+  pacco** (altezza/larghezza/profondità, peso netto/lordo). È il sistema
+  produttori↔retailer: richiede membership GS1 / accesso a un data pool → oneroso.
+- **Approccio pragmatico consigliato per l'MVP/premium iniziale:**
+  1. stima il volume da **peso × densità** per categoria (es. frutta secca,
+     liofilizzati, barrette) — tabella di densità curata internamente;
+  2. per i top-prodotti, **curazione manuale** delle dimensioni dalla confezione
+     (schede prodotto retailer/produttore);
+  3. il dato esatto via GS1 solo se/quando il volume diventa core a pagamento.
+
+### 14.5 Strategia dati consigliata
+- **MVP (free, categorie):** non serve un DB prodotti pieno — basta una
+  **tabella curata di categorie** con kcal/100 g e densità medie (§13), derivabile
+  da CREA/OpenFoodFacts.
+- **Premium (menu concreti):** **OpenFoodFacts** come base prodotti EU + eventuale
+  **FatSecret** per copertura/qualità, + **curazione manuale** di un set di
+  prodotti "da trekking" (liofilizzati, barrette) con peso e **volume** stimato.
+- Verificare le **licenze** (ODbL share-alike; donazione BDA) prima di pubblicare.
