@@ -1,48 +1,61 @@
-# Revisione prototipo Kcalibro vs specifiche
+# Revisione prototipo Fuel Your Trek vs specifiche
 
-> Confronto del prototipo `prototype/Kcalibro.html` (export Claude Design) con
-> `wireframe.md`, `copy-microtesti.md` e `categorie-alimentari.md`.
-> Esito: **molto fedele alle specifiche**, pronto come prototipo dimostrativo.
+> Verifica del prototipo **Fuel Your Trek** (export Claude Design, design system
+> Vette e Baite) in `prototype/fuel-your-trek/` rispetto a `wireframe.md`,
+> `copy-microtesti.md`, `categorie-alimentari.md` e alle decisioni di prodotto.
+> Esito: **molto allineato alle specifiche aggiornate**.
 
-## Cos'è il file
-HTML autoconsistente "a bundle": contiene l'app compressa (asset base64/gzip +
-font) e la ricostruisce nel browser via JavaScript. Funziona in qualsiasi browser
-moderno, **Safari iPhone incluso**. Non è codice modificabile a mano: per cambiarlo
-si rigenera in Claude Design.
+## Struttura del prototipo (dopo pulizia)
+```
+prototype/
+├── Fuel Your Trek · Sabbia.html      ← standalone apribile (Safari iPhone incluso)
+└── fuel-your-trek/
+    ├── Fuel Your Trek · Pino.dc.html   (tema pino)   → importa KcalibroApp
+    ├── Fuel Your Trek · Sabbia.dc.html (tema sabbia) → importa KcalibroApp
+    ├── Fuel Your Trek · Sabbia.html    (bundle)
+    ├── KcalibroApp.dc.html             (sorgente app — nome componente interno)
+    ├── _ds/  (design system Vette e Baite)  assets/  screenshots/  support.js  uploads/
+```
+Due temi: **Pino** (verde) e **Sabbia** (chiaro).
 
-## Copertura schermate (S0–S6)
-Tutte presenti e coerenti con il wireframe:
-- **S0 Welcome** — "Kcalibro · Calibra le tue calorie da cammino", CTA *Inizia* / *Accedi*. ✓
-- **S1 Profilo** — sesso, età, altezza, peso + allenamento opzionale; nota privacy "restano sul dispositivo". ✓
-- **S2 Percorso** — distanza, dislivello, durata, terreno, peso zaino + avanzate (passo, quota, stagione) + *Importa GPX · Presto*. ✓
-- **S3 Risultato** — 4.180 kcal (intervallo 3.760–4.600), ~2.090/giorno, acqua 2,5–3 L, "Come l'abbiamo calcolato" (Pandolf + Mifflin-St Jeor), disclaimer ±10%. ✓
-- **S4 Cosa mangiare** — obiettivo 2.090 kcal, macro 55/30/15, categorie con grammi/kcal, peso cibo ~520 g/giorno, tip densità calorica, paywall. ✓
-- **S5 Riepilogo** — 18 km/2 gg, 4.180 kcal, ~1,0 kg cibo, 5–6 L acqua, testo condivisibile, *Condividi*/*Salva*. ✓
-- **S6 Premium** — menu Giorno 1, lista spesa, spazio zaino; prezzi 4,99 €/mese · 29,99 €/anno + *Pass Cammino* 2,99 €. ✓
+## ✅ Conforme alle decisioni
+- **Rebrand "Fuel Your Trek"** ovunque (welcome, paywall "Fuel Your Trek Premium",
+  testo di condivisione). **Nessun uso di "FYT" nei testi**, **nessun "FYT Outdoor"**
+  → rispetta le regole di marchio (`naming-fyt-analisi.md`).
+- **Bilingue come deciso:** switch **IT/EN** predisposto + nota "English version in
+  arrivo — testi in italiano" (struttura ora, EN dopo).
+- **Confine free/premium corretto:** il free arriva a **S3 Risultato** (calorie +
+  **macro** + **acqua/sali**); **S4 "Cosa mangiare" è "Anteprima Premium"** bloccata.
+- **Feature di Riccardo presenti** nelle preview premium:
+  - **GPX & timing barrette** (es. "Barretta carbo · ore 10:15 prima salita +600 m")
+  - **Scoring barrette** (95/90/70/60) coerente con `categorie-alimentari.md`
+  - **Diete/allergeni** (onnivoro/veg/vegano/senza latticini) + **"senza fornello"**
+  - **Preset cammini** (Via degli Dei, Borghi Silenti, Briganti, Vandelli, Dolomiti)
+  - **Importa GPX = Premium** in S2
+- **Prezzi:** 4,99 €/mese · 29,99 €/anno · Pass 2,99 €. Disclaimer medico presente.
 
-## Coerenza numeri e testi
-- Numeri allineati a `categorie-alimentari.md` e al wireframe (kcal, macro, grammi per categoria, volume ~1,1 L, peso ~1,0 kg).
-- Copy in italiano fedele a `copy-microtesti.md`, tono semplice "da guida".
+## 🔧 Rifiniture da fare in Claude Design
+1. **Tagline welcome:** ancora *"Calibra le tue calorie da cammino"* (residuo del
+   nome Kcalibro). Sostituire con qualcosa per FYT, es. *"Fai il pieno per il tuo
+   cammino"* (evitare "calibra").
+2. **Nome componente interno** ancora `KcalibroApp` (in `KcalibroApp.dc.html`):
+   è interno, non visibile in UI. Rinominabile in Design quando comodo; lasciato
+   così per non rischiare la resa.
+3. **Tono:** continuare a bilanciare l'energia di "Fuel" con i valori
+   *lenti/consapevoli* di Vette e Baite.
 
-## Extra positivi (oltre le specifiche)
-- **Disclaimer medico/nutrizionale** esplicito.
-- **Due temi visivi** "Bosco / Pietra" per testare lo stile.
-- GPX marcato *Presto*; toast "Sto calcolando il tuo piano…".
+## Limiti attuali (attesi)
+- È un **mockup visivo**: gli input non ricalcolano i numeri (sono d'esempio).
+  La logica vera è pronta in `engine/fyt-calc.mjs`, da agganciare nell'app reale.
+- Asset di brand (palette/font/logo/foto) ancora **interpretati** dal sito: per la
+  versione definitiva servono gli originali di Vette e Baite.
 
-## Limiti attuali (attesi per un prototipo di design)
-- È un **mockup visivo**: gli input non ricalcolano i risultati (i numeri sono
-  d'esempio, fissi). Nessuna logica Pandolf/Mifflin reale dietro.
-- Nessun collegamento a database alimenti (coerente: quello è fase tecnica, §14).
+## Pulizia effettuata sul repo
+- Rinominata `prototype/Prototipo mobile Kcalibro 2/` → `prototype/fuel-your-trek/`.
+- Rimossi i leftover Kcalibro (`Kcalibro.html`, `Kcalibro Sabbia.html`,
+  `Kcalibro.dc.html`, `KcalibroApp v1.dc.html`) e l'iterazione superata
+  `prototype/Prototipo mobile Kcalibro/`.
 
-## Suggerimenti per la prossima iterazione
-1. **Collegare gli input al calcolo** (BMR + Pandolf da `formule-calcolo.md`) per
-   un prototipo "vivo".
-2. Verificare **contrasto e dimensioni tap target** su mobile (accessibilità).
-3. In S4, valutare di mostrare anche la **densità calorica per categoria** come
-   micro-badge educativo.
-4. Quando si passa al premium reale: agganciare un set di prodotti da
-   `OpenFoodFacts` + curazione (vedi §14 del PRD).
-
-**Conclusione:** il prototipo rappresenta correttamente il flusso e il valore
-dell'app; va bene per test utente e demo. Le evoluzioni sono "renderlo
-funzionante" e collegare i dati reali.
+**Conclusione:** il prototipo FYT rappresenta correttamente brand, flusso e confine
+free/premium aggiornati ed è pronto per i test utente. Restano due piccoli ritocchi
+di copy/naming e, in seguito, l'aggancio del motore e gli asset di brand reali.
