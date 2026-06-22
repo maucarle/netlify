@@ -41,16 +41,10 @@ body{margin:0;background:#ded7c7}
     <div style="width:100%;max-width:440px;margin-bottom:22px">
       <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:14px">
         <div>
-          <div style="font-family:var(--font-text);font-weight:700;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--brand-accent)">Prototipo · Fuel Your Trek</div>
+          <div style="font-family:var(--font-text);font-weight:700;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--brand-accent)">Prototipo · Kcalibro</div>
           <div style="font-family:var(--font-display);font-weight:800;font-size:22px;letter-spacing:-0.02em;color:var(--ink-900);margin-top:4px">{{ themeName }}</div>
         </div>
-        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
-          <div style="display:flex;gap:5px">
-            <button style="{{ langItStyle }}" onClick="{{ setLangIt }}">IT</button>
-            <button style="{{ langEnStyle }}" onClick="{{ setLangEn }}">EN</button>
-          </div>
-          <div style="font-family:var(--font-text);font-weight:600;font-size:11px;letter-spacing:0.02em;color:var(--ink-500);text-align:right;line-height:1.5">Design system<br>Vette e Baite</div>
-        </div>
+        <div style="font-family:var(--font-text);font-weight:600;font-size:11px;letter-spacing:0.02em;color:var(--ink-500);text-align:right;line-height:1.5">Design system<br>Vette e Baite</div>
       </div>
       <div style="display:flex;gap:7px;overflow-x:auto;padding-bottom:4px">
         <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="7">
@@ -74,17 +68,12 @@ body{margin:0;background:#ded7c7}
 
       <div style="flex:1;position:relative;overflow:hidden;background:var(--bg)">
 
-        <sc-if value="{{ enMode }}">
-          <div style="position:absolute;top:0;left:0;right:0;z-index:40;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-text);font-weight:700;font-size:10.5px;letter-spacing:0.01em;text-align:center;padding:7px 14px;line-height:1.4;border-bottom:1px solid var(--line)">🇬🇧 English version in arrivo — testi mostrati in italiano</div>
-        </sc-if>
-
-
         <sc-if value="{{ is0 }}" hint-placeholder-val="{{ true }}">
           <div data-screen-label="S0 Welcome" style="position:absolute;inset:0;display:flex;flex-direction:column;animation:scrn .5s var(--ease-out)">
             <div class="kc-topo" style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 36px;position:relative">
               <div style="position:absolute;top:38%;left:50%;transform:translate(-50%,-50%);width:320px;height:320px;background:radial-gradient(circle,var(--accent-soft),transparent 70%);opacity:0.8;pointer-events:none"></div>
               <svg width="74" height="50" viewBox="0 0 74 50" fill="none" stroke="var(--primary)" stroke-width="1.9" stroke-linejoin="round" style="position:relative"><path d="M4 47 L26 9 L40 30 L48 15 L70 47 Z"></path><circle cx="53" cy="12" r="4.4" fill="var(--accent)" stroke="none"></circle></svg>
-              <h1 style="font-family:var(--font-display);font-weight:800;font-size:40px;letter-spacing:-0.03em;color:var(--ink);margin:18px 0 0;line-height:1.0;max-width:280px">Fuel Your Trek</h1>
+              <h1 style="font-family:var(--font-display);font-weight:800;font-size:42px;letter-spacing:-0.03em;color:var(--ink);margin:20px 0 0;line-height:1">Kcalibro</h1>
               <p style="font-family:var(--font-display);font-weight:600;font-size:17px;color:var(--primary);margin:14px 0 0;line-height:1.35;max-width:260px">Calibra le tue calorie da cammino.</p>
               <p style="font-family:var(--font-text);font-weight:400;font-size:14px;color:var(--muted);margin:14px 0 0;line-height:1.6;max-width:248px">Scopri quante calorie consumi e cosa mettere nello zaino.</p>
             </div>
@@ -198,19 +187,10 @@ body{margin:0;background:#ded7c7}
                 </div>
               </sc-if>
 
-              <div style="font-family:var(--font-text);font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin:20px 0 9px">Scorciatoie</div>
-              <button style="display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:var(--surf);border:1px solid var(--line);border-radius:var(--radius-md);padding:13px 14px;cursor:pointer" onClick="{{ goPremium }}">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
-                <span style="font-family:var(--font-text);font-weight:700;font-size:13px;color:var(--ink)">Preset cammino</span>
-                <span style="font-family:var(--font-text);font-weight:400;font-size:11.5px;color:var(--muted)">Via degli Dei, Vandelli…</span>
-                <span style="margin-left:auto;display:flex;align-items:center;gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--accent-ink)" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="1"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg><x-import component-from-global-scope="VetteEBaiteDesignSystem_f3e4e5.Tag" tone="accent" hint-size="auto,24px">Premium</x-import></span>
-              </button>
-              <button style="display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:var(--surf);border:1px solid var(--line);border-radius:var(--radius-md);padding:13px 14px;cursor:pointer;margin-top:10px" onClick="{{ goPremium }}">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
-                <span style="font-family:var(--font-text);font-weight:700;font-size:13px;color:var(--ink)">Importa traccia GPX</span>
-                <span style="font-family:var(--font-text);font-weight:400;font-size:11.5px;color:var(--muted)">Calcolo preciso</span>
-                <span style="margin-left:auto;display:flex;align-items:center;gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--accent-ink)" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="1"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg><x-import component-from-global-scope="VetteEBaiteDesignSystem_f3e4e5.Tag" tone="accent" hint-size="auto,24px">Premium</x-import></span>
-              </button>
+              <div style="display:flex;align-items:center;justify-content:space-between;border:1px dashed var(--line);border-radius:var(--radius-md);padding:13px 14px;margin-top:16px;opacity:0.75">
+                <span style="font-family:var(--font-text);font-weight:600;font-size:13px;color:var(--muted)">Importa traccia GPX</span>
+                <x-import component-from-global-scope="VetteEBaiteDesignSystem_f3e4e5.Tag" tone="accent" hint-size="auto,24px">Presto</x-import>
+              </div>
             </div>
             <div style="{{ footStyle }}">
               <x-import component-from-global-scope="VetteEBaiteDesignSystem_f3e4e5.Button" variant="{{ ctaVariant }}" size="lg" full-width="{{ T }}" on-click="{{ doCalcola }}" hint-size="100%,56px">Calcola →</x-import>
@@ -253,27 +233,6 @@ body{margin:0;background:#ded7c7}
                 </div>
               </div>
 
-              <div style="{{ macroCard }}">
-                <div style="font-family:var(--font-text);font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)">Ripartizione macro</div>
-                <div>
-                  <div style="display:flex;justify-content:space-between;font-family:var(--font-text);font-weight:700;font-size:12.5px;color:var(--ink);margin-bottom:7px"><span>Carboidrati</span><span style="color:var(--primary)">55%</span></div>
-                  <div style="height:7px;background:var(--track);border-radius:var(--radius-pill);overflow:hidden"><div style="width:55%;height:100%;background:var(--primary);border-radius:var(--radius-pill)"></div></div>
-                </div>
-                <div>
-                  <div style="display:flex;justify-content:space-between;font-family:var(--font-text);font-weight:700;font-size:12.5px;color:var(--ink);margin-bottom:7px"><span>Grassi</span><span style="color:var(--accent)">30%</span></div>
-                  <div style="height:7px;background:var(--track);border-radius:var(--radius-pill);overflow:hidden"><div style="width:30%;height:100%;background:var(--accent);border-radius:var(--radius-pill)"></div></div>
-                </div>
-                <div>
-                  <div style="display:flex;justify-content:space-between;font-family:var(--font-text);font-weight:700;font-size:12.5px;color:var(--ink);margin-bottom:7px"><span>Proteine</span><span style="color:var(--water)">15%</span></div>
-                  <div style="height:7px;background:var(--track);border-radius:var(--radius-pill);overflow:hidden"><div style="width:15%;height:100%;background:var(--water);border-radius:var(--radius-pill)"></div></div>
-                </div>
-              </div>
-
-              <div style="display:flex;align-items:flex-start;gap:10px;background:var(--accent-soft);border-radius:var(--radius-md);padding:12px 14px;margin-top:14px">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-ink)" stroke-width="1.7" style="flex:none;margin-top:1px"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"></path></svg>
-                <span style="font-family:var(--font-text);font-weight:400;font-size:12.5px;color:var(--tip-ink);line-height:1.55">Reintegra <span style="font-weight:800">sali ed elettroliti</span> se fa caldo o sudi molto.</span>
-              </div>
-
               <button style="display:flex;align-items:center;justify-content:space-between;width:100%;background:transparent;border:none;border-top:1px solid var(--line);padding:16px 0 14px;cursor:pointer;margin-top:20px" onClick="{{ toggleCalc }}">
                 <span style="font-family:var(--font-text);font-weight:700;font-size:13px;color:var(--muted)">Come l'abbiamo calcolato</span>
                 <span style="color:var(--primary);font-size:18px;font-weight:700;line-height:1">{{ chevCalc }}</span>
@@ -284,9 +243,8 @@ body{margin:0;background:#ded7c7}
 
               <p style="font-family:var(--font-text);font-weight:400;font-size:11px;color:var(--muted);line-height:1.6;margin:20px 0 0;border-top:1px solid var(--line);padding-top:14px;opacity:0.85">Le stime sono indicative e non sostituiscono il parere di un medico o nutrizionista.</p>
             </div>
-            <div style="{{ footStyleCol }}">
-              <x-import component-from-global-scope="VetteEBaiteDesignSystem_f3e4e5.Button" variant="{{ ctaVariant }}" size="lg" full-width="{{ T }}" on-click="{{ goRiepilogo }}" hint-size="100%,56px">Vedi riepilogo →</x-import>
-              <button style="{{ secBtn }}" onClick="{{ goCibo }}">🔒 Cosa mangio?</button>
+            <div style="{{ footStyle }}">
+              <x-import component-from-global-scope="VetteEBaiteDesignSystem_f3e4e5.Button" variant="{{ ctaVariant }}" size="lg" full-width="{{ T }}" on-click="{{ goCibo }}" hint-size="100%,56px">Cosa mangio? →</x-import>
             </div>
           </div>
         </sc-if>
@@ -301,10 +259,6 @@ body{margin:0;background:#ded7c7}
             <div style="flex:1;overflow-y:auto;padding:24px 22px 28px">
               <x-import component-from-global-scope="VetteEBaiteDesignSystem_f3e4e5.Eyebrow" tone="{{ ebTone }}" hint-size="auto,16px">Nutrizione</x-import>
               <h2 style="{{ h2Style }}">Cosa mangiare</h2>
-              <div style="display:inline-flex;align-items:center;gap:7px;margin-top:11px;border:1px solid var(--accent);background:var(--accent-soft);border-radius:var(--radius-pill);padding:5px 11px">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--accent-ink)" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="1"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>
-                <span style="font-family:var(--font-text);font-weight:700;font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent-ink)">Anteprima Premium</span>
-              </div>
 
               <div style="display:flex;align-items:baseline;gap:10px;margin-top:16px">
                 <span style="font-family:var(--font-text);font-weight:700;font-size:12px;color:var(--muted)">Obiettivo</span>
@@ -327,9 +281,7 @@ body{margin:0;background:#ded7c7}
                 </div>
               </div>
 
-              <div style="position:relative;margin-top:20px">
-              <div style="filter:blur(4px);pointer-events:none;user-select:none">
-              <div style="font-family:var(--font-text);font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin:0 0 4px">Per categoria · al giorno</div>
+              <div style="font-family:var(--font-text);font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin:22px 0 4px">Per categoria · al giorno</div>
               <div>
                 <div style="{{ liRow }}"><span style="{{ liName }}">Grassi densi</span><span style="{{ liVal }}">~110 g · 640 kcal</span></div>
                 <div style="{{ liRow }}"><span style="{{ liName }}">Carboidrati lenti</span><span style="{{ liVal }}">~200 g · 740 kcal</span></div>
@@ -342,12 +294,6 @@ body{margin:0;background:#ded7c7}
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.6"><path d="M6 9a6 6 0 0 1 12 0v11H6z"></path><path d="M9.5 9V7a2.5 2.5 0 0 1 5 0v2"></path><path d="M6 13h12"></path></svg>
                 <span style="font-family:var(--font-text);font-weight:700;font-size:13px;color:var(--ink)">Peso cibo</span>
                 <span style="margin-left:auto;font-family:var(--font-display);font-weight:700;font-size:15px;color:var(--primary)">~520 g / giorno</span>
-              </div>
-              </div>
-              <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:8px;border:1px solid var(--accent);background:var(--surf);border-radius:var(--radius-pill);padding:9px 16px;box-shadow:var(--shadow-md);white-space:nowrap">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-ink)" stroke-width="1.9"><rect x="5" y="11" width="14" height="9" rx="1"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>
-                <span style="font-family:var(--font-text);font-weight:700;font-size:11.5px;letter-spacing:0.03em;color:var(--accent-ink)">Sblocca con Premium</span>
-              </div>
               </div>
 
               <div style="background:var(--accent-soft);border-radius:var(--radius-md);padding:14px;margin-top:16px">
@@ -401,7 +347,7 @@ body{margin:0;background:#ded7c7}
               </div>
 
               <div style="border-left:3px solid var(--accent);padding:2px 0 2px 14px;margin-top:20px">
-                <p style="font-family:var(--font-text);font-style:italic;font-weight:400;font-size:13.5px;color:var(--muted);line-height:1.55;margin:0">"Il mio piano nutrizionale per 18 km e 1100 m di dislivello: 4.180 kcal e ~1,0 kg di cibo. Calcolato con Fuel Your Trek 🏔️."</p>
+                <p style="font-family:var(--font-text);font-style:italic;font-weight:400;font-size:13.5px;color:var(--muted);line-height:1.55;margin:0">"Il mio piano nutrizionale per 18 km e 1100 m di dislivello: 4.180 kcal e ~1,0 kg di cibo. Calcolato con Kcalibro."</p>
               </div>
 
               <div style="{{ cardStyleFlat }}">
@@ -425,7 +371,7 @@ body{margin:0;background:#ded7c7}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.7"><rect x="5" y="11" width="14" height="9" rx="1"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>
             </div>
             <div style="flex:1;overflow-y:auto;padding:24px 22px 28px">
-              <x-import component-from-global-scope="VetteEBaiteDesignSystem_f3e4e5.Eyebrow" tone="{{ ebTone }}" hint-size="auto,16px">Fuel Your Trek Premium</x-import>
+              <x-import component-from-global-scope="VetteEBaiteDesignSystem_f3e4e5.Eyebrow" tone="{{ ebTone }}" hint-size="auto,16px">Kcalibro Premium</x-import>
               <h2 style="{{ h2Style }}">Sblocca tutto il piano</h2>
               <p style="{{ leadStyle }}">Menu pronti, lista della spesa e ottimizzazione dello spazio nello zaino.</p>
 
@@ -456,37 +402,6 @@ body{margin:0;background:#ded7c7}
                   <div style="display:flex;justify-content:space-between;font-family:var(--font-text);font-size:12.5px;color:var(--ink)"><span>Volume cibo</span><span>~1,1 L / giorno</span></div>
                   <div style="font-family:var(--font-text);font-size:11.5px;color:var(--muted)">Sostituendo 1 liofilizzato con grassi densi: −0,2 L</div>
                   <div style="display:flex;gap:10px"><span style="flex:1;height:7px;background:var(--track);border-radius:var(--radius-pill);overflow:hidden"><span style="display:block;width:80%;height:100%;background:var(--primary)"></span></span><span style="flex:1;height:7px;background:var(--track);border-radius:var(--radius-pill);overflow:hidden"><span style="display:block;width:40%;height:100%;background:var(--accent)"></span></span></div>
-                </div>
-                <div style="{{ lockChip }}"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--accent-ink)" stroke-width="1.9"><rect x="5" y="11" width="14" height="9" rx="1"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg><span style="font-family:var(--font-text);font-weight:700;font-size:10px;letter-spacing:0.04em;color:var(--accent-ink)">Disponibile con Premium</span></div>
-              </div>
-
-              <div style="{{ lockCard }}">
-                <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 15px;border-bottom:1px solid var(--line)"><span style="font-family:var(--font-text);font-weight:700;font-size:12px;color:var(--ink)">GPX & timing barrette</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.7"><rect x="5" y="11" width="14" height="9" rx="1"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></div>
-                <div style="padding:15px;filter:blur(3px);opacity:0.5;pointer-events:none;display:flex;flex-direction:column;gap:11px">
-                  <div style="display:flex;justify-content:space-between;font-family:var(--font-text);font-size:12.5px;color:var(--ink)"><span>⏱️ Barretta carbo · ore 10:15</span><span>prima salita +600 m</span></div>
-                  <div style="display:flex;justify-content:space-between;font-family:var(--font-text);font-size:12.5px;color:var(--ink)"><span>🥜 Frutta secca · spuntini</span><span>in marcia</span></div>
-                  <div style="font-family:var(--font-text);font-size:11.5px;color:var(--muted);line-height:1.5">Con la traccia GPX calcoliamo dove arriva la salita e quando assumere la barretta giusta.</div>
-                </div>
-                <div style="{{ lockChip }}"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--accent-ink)" stroke-width="1.9"><rect x="5" y="11" width="14" height="9" rx="1"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg><span style="font-family:var(--font-text);font-weight:700;font-size:10px;letter-spacing:0.04em;color:var(--accent-ink)">Disponibile con Premium</span></div>
-              </div>
-
-              <div style="{{ lockCard }}">
-                <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 15px;border-bottom:1px solid var(--line)"><span style="font-family:var(--font-text);font-weight:700;font-size:12px;color:var(--ink)">Scoring barrette</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.7"><rect x="5" y="11" width="14" height="9" rx="1"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></div>
-                <div style="padding:15px;filter:blur(3px);opacity:0.5;pointer-events:none;display:flex;flex-direction:column;gap:10px">
-                  <div style="display:flex;justify-content:space-between;font-family:var(--font-text);font-size:12.5px;color:var(--ink)"><span>Frutta secca + disidratata</span><span style="color:var(--primary);font-weight:700">95% · spuntini</span></div>
-                  <div style="display:flex;justify-content:space-between;font-family:var(--font-text);font-size:12.5px;color:var(--ink)"><span>Flapjack avena + zuccheri</span><span style="color:var(--primary);font-weight:700">90% · in marcia</span></div>
-                  <div style="display:flex;justify-content:space-between;font-family:var(--font-text);font-size:12.5px;color:var(--ink)"><span>Zuccheri rapidi</span><span style="color:var(--accent);font-weight:700">70% · pre-salita</span></div>
-                  <div style="display:flex;justify-content:space-between;font-family:var(--font-text);font-size:12.5px;color:var(--ink)"><span>Proteica</span><span style="color:var(--accent);font-weight:700">60% · recupero</span></div>
-                </div>
-                <div style="{{ lockChip }}"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--accent-ink)" stroke-width="1.9"><rect x="5" y="11" width="14" height="9" rx="1"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg><span style="font-family:var(--font-text);font-weight:700;font-size:10px;letter-spacing:0.04em;color:var(--accent-ink)">Disponibile con Premium</span></div>
-              </div>
-
-              <div style="{{ lockCard }}">
-                <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 15px;border-bottom:1px solid var(--line)"><span style="font-family:var(--font-text);font-weight:700;font-size:12px;color:var(--ink)">Diete, allergeni & preset</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.7"><rect x="5" y="11" width="14" height="9" rx="1"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></div>
-                <div style="padding:15px;filter:blur(3px);opacity:0.5;pointer-events:none;display:flex;flex-direction:column;gap:11px">
-                  <div style="display:flex;flex-wrap:wrap;gap:7px"><span style="font-family:var(--font-text);font-weight:700;font-size:11px;color:var(--primary);border:1.5px solid var(--primary);border-radius:var(--radius-pill);padding:5px 11px">Onnivoro</span><span style="font-family:var(--font-text);font-weight:700;font-size:11px;color:var(--muted);border:1.5px solid var(--line);border-radius:var(--radius-pill);padding:5px 11px">Vegetariano</span><span style="font-family:var(--font-text);font-weight:700;font-size:11px;color:var(--muted);border:1.5px solid var(--line);border-radius:var(--radius-pill);padding:5px 11px">Vegano</span><span style="font-family:var(--font-text);font-weight:700;font-size:11px;color:var(--muted);border:1.5px solid var(--line);border-radius:var(--radius-pill);padding:5px 11px">Senza latticini</span></div>
-                  <div style="display:flex;justify-content:space-between;font-family:var(--font-text);font-size:12.5px;color:var(--ink)"><span>Senza fornello (acqua fredda)</span><span style="color:var(--muted)">◯</span></div>
-                  <div style="font-family:var(--font-text);font-size:11.5px;color:var(--muted);line-height:1.5">Preset: Via degli Dei · Borghi Silenti · Briganti · Vandelli · Dolomiti</div>
                 </div>
                 <div style="{{ lockChip }}"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--accent-ink)" stroke-width="1.9"><rect x="5" y="11" width="14" height="9" rx="1"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg><span style="font-family:var(--font-text);font-weight:700;font-size:10px;letter-spacing:0.04em;color:var(--accent-ink)">Disponibile con Premium</span></div>
               </div>
@@ -540,7 +455,7 @@ body{margin:0;background:#ded7c7}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;sabbia&quot;,&quot;pino&quot;],&quot;default&quot;:&quot;sabbia&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;showChrome&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;startScreen&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;0&quot;,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;],&quot;default&quot;:&quot;0&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
-  state = { screen:0, advOpen:false, calcOpen:false, loading:false, plan:'annual', sesso:'Uomo', allen:'Medio', terreno:'Misto', stag:'Mite', toast:'', lang:'it' };
+  state = { screen:0, advOpen:false, calcOpen:false, loading:false, plan:'annual', sesso:'Uomo', allen:'Medio', terreno:'Misto', stag:'Mite', toast:'' };
 
   T = {
     sabbia: {
@@ -578,9 +493,6 @@ class Component extends DCLogic {
       width:'100%', height:'100%', borderRadius:'35px', overflow:'hidden', position:'relative',
       display:'flex', flexDirection:'column', background:t.bg, color:t.ink, fontFamily:'var(--font-text)'
     };
-
-    const en = this.state.lang === 'en';
-    const langBtn = (a)=>({ appearance:'none', cursor:'pointer', padding:'5px 11px', fontFamily:'var(--font-text)', fontWeight:700, fontSize:'11px', letterSpacing:'0.04em', border:'1.5px solid '+(a?'var(--green-700)':'var(--sand-300)'), background:a?'var(--green-700)':'var(--card-white)', color:a?'var(--sand-50)':'var(--ink-500)', borderRadius:'var(--radius-pill)', transition:'all .18s' });
 
     const seg = (a)=>({ flex:1, appearance:'none', cursor:'pointer', padding:'11px 6px', fontFamily:'var(--font-text)', fontWeight:700, fontSize:'12.5px', border:'1.5px solid '+(a?t.primary:t.line), background:a?t.primary:'transparent', color:a?(this.props.theme==='pino'?'#0f241a':'#faf7f0'):t.muted, borderRadius:'var(--radius-md)', transition:'all .18s var(--ease-out)' });
     const mk = (arr,key)=>arr.map(o=>({ label:o, onClick:()=>this.setState({ [key]:o }), style:seg(this.state[key]===o) }));
@@ -633,8 +545,6 @@ class Component extends DCLogic {
     const go = n => ()=>this.go(n);
     return {
       themeName: t.name, themeVars, tabs, T:true,
-      enMode: en, langItStyle: langBtn(!en), langEnStyle: langBtn(en),
-      setLangIt: ()=>this.setState({ lang:'it' }), setLangEn: ()=>this.setState({ lang:'en' }),
       pageStyle: 'min-height:100vh;background:'+(this.props.theme==='pino'?'#cdd8cd':'#ded7c7')+';display:flex;flex-direction:column;align-items:center;padding:30px 16px 46px;font-family:var(--font-text)',
       bezelStyle: 'width:392px;height:812px;background:'+t.bezel+';border-radius:46px;padding:11px;box-shadow:0 30px 60px -18px rgba(22,53,36,0.45),0 8px 26px rgba(0,0,0,0.16);flex:none',
       showChrome: this.props.showChrome !== false,
