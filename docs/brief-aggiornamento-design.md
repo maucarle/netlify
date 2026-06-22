@@ -5,9 +5,14 @@
 > `copy-microtesti.md` aggiornati.
 
 ## 1. Brand
-- **Nome: da "Kcalibro" a "Fuel Your Trek (FYT)".** Sostituire ovunque (welcome,
+- **Nome: da "Kcalibro" a "Fuel Your Trek".** Sostituire ovunque (welcome,
   paywall, testo di condivisione).
-- **Bilingue IT + EN**: ogni stringa va prevista anche in inglese (switch lingua).
+- **Regole d'uso (importanti):** nei **testi** scrivere sempre **"Fuel Your Trek"**
+  per esteso; **"FYT" solo come monogramma del logo**, mai nei testi; **mai
+  "FYT Outdoor"** (collide con prodotti softair → SEO). Vedi `naming-fyt-analisi.md`.
+- **Bilingue IT + EN**: architettura con switch lingua e stringhe a chiave, ma per
+  ora **popolare solo l'italiano** (EN dopo).
+- **Tono:** energia di "Fuel" bilanciata coi valori *lenti/consapevoli* di Vette e Baite.
 - Mantenere il **design system "Vette e Baite"** (temi Pino / Sabbia).
 
 ## 2. Confine free / premium (cambiato!)

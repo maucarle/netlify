@@ -5,9 +5,11 @@
 > ottimizzando peso e ingombro nello zaino. Progetto ideato da Riccardo (guida
 > alpina, cooperativa **Vette e Baite**).
 >
-> **Nome:** Fuel Your Trek (FYT) · **Lingua:** bilingue **IT+EN** dal lancio ·
-> **Pubblico:** escursionisti singoli (B2C) · **Modello:** freemium.
-> *Nota: il primo prototipo è ancora "Kcalibro" → da ri-brandizzare in FYT.*
+> **Nome:** **Fuel Your Trek** (nei testi per esteso; "FYT" solo nel logo, mai
+> "FYT Outdoor" — vedi `naming-fyt-analisi.md`) · **Lingua:** bilingue **IT+EN**
+> (struttura ora, EN dopo) · **Pubblico:** escursionisti singoli (B2C) ·
+> **Modello:** freemium.
+> *Nota: il primo prototipo è ancora "Kcalibro" → da ri-brandizzare.*
 
 ## Stato
 
@@ -21,6 +23,9 @@ Le risposte di Riccardo alle 14 domande sono recepite nei documenti.
 |---|---|
 | [`PRD.md`](./PRD.md) | Documento principale: contesto, **analisi di mercato**, personas, scope MVP, requisiti **free vs premium**, naming, **prezzi**, categorie, **fonti dati**, indicazioni operative di Riccardo (§15) |
 | [`risposte-riccardo.md`](./risposte-riccardo.md) | **Risposte di Riccardo** alle 14 domande + decisioni + link risorse |
+| [`naming-fyt-analisi.md`](./naming-fyt-analisi.md) | **Analisi naming** "Fuel Your Trek" (mercato, SEO, marchio) + regole d'uso |
+| [`brief-aggiornamento-design.md`](./brief-aggiornamento-design.md) | **Brief per Claude Design**: cosa cambiare nel prototipo |
+| [`../engine/`](../engine/) | **Motore di calcolo** JS (Pandolf + Mifflin-St Jeor) — `node engine/demo.mjs` |
 | [`domande-per-riccardo.md`](./domande-per-riccardo.md) | Le 14 domande originali (✅ già risposte) |
 | [`categorie-alimentari.md`](./categorie-alimentari.md) | **Tabella categorie** (kcal/100 g, densità, kcal/kg, kcal/L) + **scoring barrette & timing** |
 | [`wireframe.md`](./wireframe.md) | **Wireframe testuali** schermata-per-schermata (S0–S6), free + premium preview |

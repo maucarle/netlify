@@ -1,8 +1,9 @@
 # Wireframe testuale — flusso app (mobile-first)
 
 > Wireframe schermata-per-schermata del flusso PRD §8, pronto da tradurre 1:1 in
-> Claude Design. Nome prodotto **Fuel Your Trek (FYT)**. Mobile-first, wizard
-> lineare con barra di avanzamento. Le schermate premium sono **bloccate** (preview).
+> Claude Design. Nome prodotto **Fuel Your Trek** (nei testi per esteso; "FYT" solo
+> nel logo, mai "FYT Outdoor"). Mobile-first, wizard lineare con barra di avanzamento.
+> Le schermate premium sono **bloccate** (preview).
 > Legenda: `[ ... ]` campo input · `( ◯ )` opzione/selezione · `[[ BOTTONE ]]` CTA.
 >
 > ⚠️ **Aggiornato (decisioni Riccardo):** lancio **bilingue IT+EN**. Il **flusso

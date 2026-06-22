@@ -280,9 +280,24 @@ scelta** (vedi domande per Riccardo).
 | **TrailFuel** | "carburante da sentiero" | Internazionale, chiaro | Generico, "molto americano", dominio probabilmente occupato |
 | **Vetta** | la cima | Pulito, italiano | Parola comune → marchio/dominio difficili |
 
-**Decisione (Mauro + Riccardo): ✅ Fuel Your Trek (FYT).** Apre al mercato estero,
-coerente col lancio bilingue. Restano da fare: verifica **dominio e marchio**
-(IT+EU), e ri-branding del prototipo (oggi ancora "Kcalibro").
+**Decisione (Mauro + Riccardo): ✅ "Fuel Your Trek".** Apre al mercato estero,
+coerente col lancio bilingue.
+
+**Regole d'uso del marchio** (da analisi di mercato →
+[`naming-fyt-analisi.md`](./naming-fyt-analisi.md)):
+- Nei **testi** si scrive sempre **"Fuel Your Trek"** per esteso.
+- **"FYT" solo come monogramma del logo**, mai come stringa testuale (in IT si legge
+  "Fit"/"Fight" → typo).
+- **🚫 Mai "FYT Outdoor":** collide con i bersagli softair **TMC "FYT outdoor"** che
+  saturano la SEO italiana → cannibalizzazione.
+- **Marchio descrittivo** → tutela debole: serve un **logo figurativo forte**
+  (è ciò che si deposita); registrare domini `fuelyourtrek.it/.com`; **SEO locale**
+  (non competere su "nutrizione in quota").
+- **Tono di copy:** bilanciare l'energia di "Fuel" con i valori *lenti/consapevoli*
+  di Vette e Baite.
+
+*Restano da fare (esterni): verifica dominio/marchio (UIBM/EUIPO, Classi 39/41/9) e
+ri-branding del prototipo (oggi ancora "Kcalibro").*
 
 ---
 
