@@ -1,0 +1,10 @@
+/* ============================================================
+   Vette e Baite — Webfonts
+   SUBSTITUTION NOTICE: the live site loads Google Fonts via
+   Elementor; the exact families could not be read (hotlink/CORS).
+   These are close-in-spirit substitutes — confirm or replace.
+     Display  : Bricolage Grotesque  (friendly, crafted grotesque)
+     Text     : Hanken Grotesk       (clean, warm humanist sans)
+     Mono/eyebrow accents reuse Hanken in tracked uppercase.
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap');
