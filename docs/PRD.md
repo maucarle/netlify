@@ -2,7 +2,11 @@
 
 > Documento di prodotto (PRD) per il prototipo Claude Design. NON include
 > implementazione tecnica (esplicitamente fuori scope per ora).
-> Nome di lavoro: **TrailFuel** (da validare con Riccardo).
+> Nome prodotto: **Fuel Your Trek (FYT)** — scelto con Riccardo per aprire al
+> mercato estero (lancio bilingue). *Nota: il primo prototipo è ancora "Kcalibro";
+> va ri-brandizzato in FYT.*
+> 👉 Le risposte di Riccardo alle 14 domande sono raccolte in
+> [`risposte-riccardo.md`](./risposte-riccardo.md).
 
 ---
 
@@ -21,13 +25,20 @@ per chi, free vs premium, dati necessari, domande aperte da chiudere con
 Riccardo) per alimentare un prototipo in Claude Design. La parte tecnica di
 implementazione è volutamente esclusa.
 
-Decisioni già prese con il committente:
-- **Mercato:** Italia/Europa prima (lingua italiana, alimenti europei).
-- **Pubblico:** escursionisti singoli (B2C). Guide/gruppi = roadmap futura.
-- **Output menu:** all'MVP basta *target calorie/macro + categorie di cibo*;
-  evoluzione verso menu concreto + lista spesa come livello **premium**.
+Decisioni già prese (Mauro + Riccardo):
+- **Nome:** **Fuel Your Trek (FYT)** (ritirato "Kcalibro": chiudeva all'estero).
+- **Mercato/lingua:** **bilingue IT+EN dal lancio** — il mercato è vuoto, due
+  lingue aprono un bacino molto più ampio. Alimenti europei.
+- **Pubblico:** escursionisti singoli (B2C). Guide/gruppi (B2B) = roadmap futura.
+- **Confine free/premium:** **FREE = calorie totali + ripartizione macro +
+  acqua/giorno** (pacchetto base per massimizzare gli iscritti). **PREMIUM =**
+  categorie/menu concreto, lista spesa, **GPX**, ingombro, diete/allergeni,
+  timing barrette.
 - **Peso vs ingombro:** ottimizzazione del **peso** ora; **ingombro/spazio**
-  nello zaino come feature **premium futura** (è la leva differenziante).
+  nello zaino come feature **premium** (è la leva differenziante).
+- **Focus d'uso:** giornaliere → contenuto **free** (spuntini/pranzi);
+  multi-giorno, soprattutto **in tenda**, → **premium** (pasti completi: massimo
+  problema di peso e ingombro).
 
 ---
 
@@ -79,17 +90,18 @@ Calcolo.online, REI Expert Advice.
 ## 3. Concept & scope MVP
 
 **Una frase:** inserisci i tuoi dati e il percorso → l'app ti dice **quante
-calorie consumerai** e **quanto/che tipo di cibo portare** (target calorico,
-macro e categorie alimentari), ottimizzato sul **peso**.
+calorie consumerai**, **come ripartire i macro** e **quanta acqua** ti serve.
+Poi, in premium, **cosa portare** (menu/categorie), ottimizzato su peso e ingombro.
 
-**In scope (MVP, free):** input biometrici, input percorso, stima calorica,
-fabbisogno giornaliero, ripartizione macro, suggerimento categorie di cibo e
-quantità/peso indicativo, fabbisogno acqua.
+**In scope (MVP, free):** input biometrici, input percorso (manuale: km +
+dislivello+), stima calorica, **calorie totali/giorno**, **ripartizione macro**,
+**fabbisogno acqua** (con cenno sali/elettroliti). Niente menu né categorie con
+grammi: quelle sono premium.
 
-**Fuori scope MVP (→ premium/roadmap):** menu con prodotti reali + ricette +
-lista della spesa; ottimizzazione **ingombro/volume**; pianificazione per
-gruppi (guide); import GPX automatico; account multi-percorso salvati;
-integrazione wearable/health.
+**Premium (vedi §5):** categorie/menu concreto con grammi, lista spesa, **import
+GPX** (calcolo più preciso + timing), ottimizzazione **ingombro/volume**, menu per
+**diete e allergeni**, opzione **"senza fornello"**, percorsi salvati. **Roadmap:**
+modalità **guide/gruppi** (B2B), integrazione wearable/health.
 
 ---
 
@@ -99,50 +111,68 @@ integrazione wearable/health.
 - Sesso, età, altezza, peso. (Opzionali: livello di allenamento/condizione fisica.)
 - Persistenza minima (profilo locale) per non reinserire ogni volta.
 
-### 4.2 Definizione percorso (input manuale all'MVP)
-- Distanza (km), dislivello positivo (m), durata stimata o giorni.
-- Tipo di terreno (sentiero battuto / misto / impervio) → fattore terreno.
-- Peso dello zaino (kg) — input chiave del modello Pandolf.
-- (Opzionale) ritmo/passo medio, temperatura/stagione, quota media.
+### 4.2 Definizione percorso
+- **Free (manuale):** distanza (km), dislivello positivo (m), durata o giorni,
+  tipo di terreno (battuto / misto / impervio), peso zaino (kg, input chiave Pandolf).
+- **Opzionali (migliorano la precisione):** ritmo/passo, **stagione/temperatura**
+  e **quota media** → soprattutto per acqua e quota calorica (clima/ambiente).
+- **Premium:** **import traccia GPX** → calcolo molto più preciso (dislivello reale,
+  pendenze) e abilita il **timing delle barrette** sui tratti di salita.
+
+### 4.2-bis Preferenze (opzionali, alimentano i menu premium)
+- **Dieta:** onnivoro / vegetariano / vegano / senza latticini.
+- **Allergeni:** checklist dei principali (14 UE).
+- **Senza fornello:** flag che limita ai cibi reidratabili ad **acqua fredda**.
 
 ### 4.3 Stima del consumo calorico
 - Calcolo con **Pandolf (load carriage) + Mifflin-St Jeor BMR**.
 - Output: **kcal totali** del percorso e **kcal/giorno**.
 - Mostrare un range (es. ±10%) per onestà sul margine di errore.
 
-### 4.4 Fabbisogno nutrizionale
-- **Target calorico giornaliero** da coprire con il cibo.
-- **Ripartizione macro** consigliata per sforzo prolungato (es. carbo/grassi/proteine).
-- **Fabbisogno idrico** indicativo (e cenno a sali/elettroliti).
+### 4.4 Fabbisogno nutrizionale — **è il cuore del FREE**
+- **Calorie totali e per giorno** da coprire con il cibo.
+- **Ripartizione macro** consigliata per sforzo prolungato (carbo/grassi/proteine).
+- **Fabbisogno idrico/giorno** + cenno **sali/elettroliti** (in primo piano, varia
+  con clima/stagione — punto sottolineato da Riccardo).
+- Questi tre output (calorie + macro + acqua) sono il **pacchetto gratuito** che
+  massimizza gli iscritti.
 
-### 4.5 Suggerimento alimentare (livello base)
-- **Categorie di cibo** consigliate (es. carboidrati a rilascio rapido/lento,
-  grassi calorico-densi, proteine, snack salati) con **quantità/peso indicativo**
-  per raggiungere il target.
-- Indicatore di **densità calorica** (kcal/100 g) come educazione dell'utente:
-  regola pratica "punta ad almeno ~400–450 kcal/100 g per risparmiare peso".
-- **Peso totale del cibo** stimato per il percorso (leva "ultralight").
+### 4.5 Suggerimento alimentare → **spostato in PREMIUM**
+Le **categorie di cibo con grammi**, la **densità calorica** e il **peso totale**
+del cibo NON sono più nel free: vivono in premium (vedi §5). Nel free se ne mostra
+solo un **assaggio bloccato** (premium preview) come CTA.
 
-### 4.6 Output / riepilogo
-- Schermata riassuntiva esportabile/condivisibile (kcal, macro, acqua, peso cibo,
-  categorie). Tono semplice e rassicurante per il neofita.
-- CTA verso premium ("vuoi il menu pronto e la lista della spesa?").
+### 4.6 Output / riepilogo (free)
+- Schermata riassuntiva esportabile/condivisibile: **kcal, macro, acqua**.
+  Tono semplice e rassicurante per il neofita.
+- CTA verso premium ("vuoi il menu pronto, la lista della spesa e l'ottimizzazione
+  dello zaino?").
 
 ---
 
-## 5. Requisiti funzionali — Premium (roadmap, da prototipare come "preview")
+## 5. Requisiti funzionali — Premium (da prototipare come "preview")
 
+- **Categorie di cibo con grammi** (ex §4.5) + indicatore densità calorica.
 - **Menu concreto multi-giorno:** colazione/pranzo/cena/snack con **prodotti
   reali europei** (liofilizzati EU, prodotti da supermercato IT, barrette,
-  frutta secca) — grammi, kcal, peso.
+  frutta secca) — grammi, kcal, peso. Struttura sulla **filosofia di Riccardo**:
+  colazione buona → giornata leggera (tanti spuntini) → **cena abbondante**.
 - **Lista della spesa** generata dal menu.
+- **Import GPX** → calcolo calorie più preciso e **timing delle barrette**
+  (quando assumerle prima dei tratti di salita).
+- **Scoring barrette:** punteggio % di idoneità all'hiking e momento ottimale
+  della giornata (vedi `categorie-alimentari.md`).
 - **Ottimizzazione ingombro/volume** (packability): oltre al peso, stima dello
   **spazio** occupato → il differenziatore unico vs competitor.
-- **Preferenze e diete:** vegetariano/vegano, senza glutine, allergie, intolleranze.
+- **Diete e allergeni:** menu per onnivoro/vegetariano/vegano/senza latticini,
+  filtro allergeni; opzione **"senza fornello"** (solo reidratazione ad acqua fredda).
 - **Profili e percorsi salvati**, storico, riutilizzo menu.
-- **(Roadmap successiva)** modalità **gruppo/guida** (B2B): N persone con profili
-  diversi, somma fabbisogni, ripartizione carico tra zaini.
-- **Consigli personalizzati "firma Riccardo"** (contenuti esperti / masterclass).
+- **Consigli "firma Riccardo"** + contenuti di **nutrizionisti/dietisti** partner.
+
+### 5.1 Roadmap B2B — guide/gruppi
+Pacchetto per operatori: **più profili da un unico account** (prezzo per profilo
+più conveniente del premium singolo), per creare menu personalizzati ai propri
+clienti. Accesso previa **verifica del tesserino** di operatore del settore.
 
 ---
 
@@ -159,9 +189,12 @@ integrazione wearable/health.
 
 ---
 
-## 7. Domande aperte per Riccardo (per definire i CONTENUTI)
+## 7. Domande per Riccardo — ✅ RISPOSTE RICEVUTE
 
-Da chiudere prima/durante il prototipo:
+> Tutte e 14 le domande hanno avuto risposta: vedi
+> [`risposte-riccardo.md`](./risposte-riccardo.md) per la sintesi e i link alle
+> risorse. Le decisioni che ne derivano sono già recepite in §0–§6 e §15.
+> Elenco originale conservato sotto come riferimento.
 
 **Percorso & uso**
 1. L'app serve più per **giornaliere** o **multi-giorno** (rifugi/tenda)? Cambia
@@ -195,16 +228,20 @@ Da chiudere prima/durante il prototipo:
 
 ## 8. Flusso utente per il prototipo (Claude Design)
 
-Wizard lineare, mobile-first, pensato per il neofita:
+Wizard lineare, mobile-first, pensato per il neofita (bilingue IT/EN):
 
 1. **Onboarding / profilo** → sesso, età, altezza, peso.
-2. **Il tuo percorso** → distanza, dislivello, giorni, terreno, peso zaino.
-3. **Risultato calorie** → kcal totali + kcal/giorno (con range) + acqua.
-4. **Cosa mangiare** → target kcal/macro + categorie con quantità e **peso cibo**.
-5. **Riepilogo** → schermata condivisibile + CTA premium (menu+lista+ingombro).
+2. **Il tuo percorso** → distanza, dislivello, giorni, terreno, peso zaino
+   (+ opzionali stagione/quota; GPX = premium).
+3. **Risultato (FREE)** → calorie totali + per giorno (con range), **macro**,
+   **acqua/sali**. È il traguardo del flusso gratuito.
+4. **Cosa mangiare (PREMIUM PREVIEW, bloccata)** → categorie con grammi + peso cibo.
+5. **Riepilogo** → schermata condivisibile (kcal/macro/acqua) + CTA premium
+   (menu + lista spesa + ingombro + GPX + diete).
 
-Schermate "premium preview" (bloccate) per menu concreto, lista spesa e
-ottimizzazione ingombro, così da testare la disponibilità a pagare.
+Schermate "premium preview" bloccate per **categorie/menu, lista spesa,
+ottimizzazione ingombro, GPX/timing barrette**, così da testare la disponibilità
+a pagare.
 
 ---
 
@@ -238,17 +275,14 @@ scelta** (vedi domande per Riccardo).
 
 | Nome | Idea | Pro | Contro |
 |---|---|---|---|
-| **Kcalibro** ⭐ | gioco di parole *kcal* + *calibro* ("calibra le tue calorie") | Distintivo, italiano, racconta esattamente la funzione, brandizzabile | Solo italiano (debole all'estero) |
-| **TrailFuel** | "carburante da sentiero" | Internazionale, chiaro, scalabile EN | Generico, possibili omonimie/dominio occupato |
-| **Vetta** | la cima | Pulito, positivo, italiano | Parola comune → marchio/dominio difficili |
-| **Cammino & Calorie** | descrittivo | Subito comprensibile, SEO | Lungo, poco "brand" |
-| **Zainity** | *zaino* + suffisso brand | Originale, richiama lo zaino | Suono ibrido IT/EN, ortografia da spiegare |
-| **Passo (Passo Energia)** | *passo* = step/valico | Evocativo, doppio senso (passo di montagna) | Generico da solo |
+| **Fuel Your Trek (FYT)** ✅ | "fai il pieno per il tuo trek", acronimo FYT | Internazionale, coerente col lancio bilingue e con le app sport-nutrition, brandizzabile | Inglese (meno "caldo" in IT); verificare dominio/marchio |
+| **Kcalibro** | *kcal* + *calibro* ("calibra le tue calorie") | Distintivo, italiano, racconta la funzione | Chiude al mercato estero → **scartato** |
+| **TrailFuel** | "carburante da sentiero" | Internazionale, chiaro | Generico, "molto americano", dominio probabilmente occupato |
+| **Vetta** | la cima | Pulito, italiano | Parola comune → marchio/dominio difficili |
 
-**Raccomandazione:** partire con **Kcalibro** come brand principale (forte sul
-mercato italiano di lancio e racconta la promessa), tenendo **TrailFuel** come
-possibile nome internazionale futuro o tagline. Decisione finale a Riccardo dopo
-check dominio/marchio e suo gusto personale.
+**Decisione (Mauro + Riccardo): ✅ Fuel Your Trek (FYT).** Apre al mercato estero,
+coerente col lancio bilingue. Restano da fare: verifica **dominio e marchio**
+(IT+EU), e ri-branding del prototipo (oggi ancora "Kcalibro").
 
 ---
 
@@ -261,7 +295,7 @@ generoso** che fa da acquisizione.
 
 | Piano | Prezzo (ipotesi) | Cosa include |
 |---|---|---|
-| **Free** | 0 € | Calcolo calorico personalizzato, fabbisogno macro/acqua, categorie di cibo con peso indicativo, 1 percorso alla volta (non salvato) |
+| **Free** | 0 € | Calcolo calorico personalizzato, **ripartizione macro**, **fabbisogno acqua/sali**, 1 percorso alla volta (non salvato). *Le categorie/menu con grammi NON sono incluse (premium).* |
 | **Pass Cammino** (one-time) | **2,99 €** sblocco singolo | Per il neofita occasionale: menu concreto + lista spesa + ottimizzazione peso per *un* trekking. Converte chi non vuole abbonarsi |
 | **Premium** (abbonamento) | **4,99 €/mese** o **29,99 €/anno** | Menu concreti illimitati, lista spesa, ottimizzazione **ingombro**, diete/allergie, percorsi salvati e storico, contenuti "firma Riccardo" |
 | **Pro / Guida** (roadmap B2B) | **~99–149 €/anno** | Pianificazione per gruppi, profili multipli, ripartizione carico, branding per la guida |
@@ -344,3 +378,36 @@ Da dove prendere i dati di prodotto. Sintesi per tipo di dato.
   **FatSecret** per copertura/qualità, + **curazione manuale** di un set di
   prodotti "da trekking" (liofilizzati, barrette) con peso e **volume** stimato.
 - Verificare le **licenze** (ODbL share-alike; donazione BDA) prima di pubblicare.
+
+---
+
+## 15. Indicazioni operative di Riccardo (sintesi)
+
+Estratto dalle risposte ([`risposte-riccardo.md`](./risposte-riccardo.md)) con
+impatto diretto su contenuti e prototipo.
+
+### 15.1 Filosofia alimentare "firma Riccardo" (valore distintivo)
+> Colazione buona → **giornata leggera** con tanti piccoli spuntini → **cena
+> abbondante** la sera per compensare. Ideale con pernotto in struttura; in tenda
+> più difficile (qui contano peso/ingombro). Acqua e sali in primo piano. **No gel**:
+> preferire cibi solidi. Frutta fresca solo per le giornaliere (deperibile).
+
+### 15.2 Preset cammini (per i percorsi pronti)
+- **Italia:** Via degli Dei, Cammino dei Borghi Silenti, Cammino dei Briganti,
+  Via Vandelli, tour multi-giorno in Dolomiti e sulle Alpi.
+- **Estero:** trekking d'**alta quota** e in **ambienti umidi** (Sud-est asiatico).
+- **Escludere** i cammini lunghissimi tipo Santiago (letteratura satura, pubblico
+  ridotto). Assunto: ciò che funziona per una settimana vale anche per un mese.
+
+### 15.3 Cibi di riferimento (dettaglio in `categorie-alimentari.md`)
+Barrette frutta secca / flapjack avena-zuccheri, **frutta disidratata**, frutta
+secca → ottimi e biodisponibili. Sera: **liofilizzati** (pasta/riso) ad acqua →
+alta densità calorica, basso peso/ingombro.
+
+### 15.4 Business & lancio
+- **B2B guide** (§5.1): pacchetti multi-profilo con verifica tesserino.
+- **Volto/firma:** Riccardo disponibile; coinvolgere **nutrizionisti/dietisti**
+  partner per contenuti approfonditi.
+- **Canali di lancio:** fiera **"Passo dopo passo"** @ DumBO (Bologna, aprile);
+  community Instagram (**Cammini d'Italia** → festival a settembre; **Yunca
+  Festival**, Monte di Bibele).
