@@ -4,9 +4,8 @@
 > semplice, diretto, incoraggiante, "da guida" — niente gergo tecnico in UI.
 > Si dà del **tu**. `{placeholder}` = valore dinamico.
 >
-> ⚠️ **Aggiornato (decisioni Riccardo):** nome **Fuel Your Trek** (nei testi per
-> esteso; "FYT" solo nel logo); lancio **bilingue IT+EN** (struttura ora, EN dopo);
-> il **free** arriva
+> ⚠️ **Aggiornato (decisioni Riccardo):** nome **Fuel Your Trek (FYT)**; lancio
+> **bilingue IT+EN** (servirà la versione EN di ogni stringa); il **free** arriva
 > fino a **S3** (calorie + macro + acqua). **S4 "Cosa mangiare" è premium preview
 > bloccata** (non più gratis).
 

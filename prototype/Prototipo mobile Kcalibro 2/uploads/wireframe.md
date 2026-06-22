@@ -1,14 +1,9 @@
 # Wireframe testuale — flusso app (mobile-first)
 
 > Wireframe schermata-per-schermata del flusso PRD §8, pronto da tradurre 1:1 in
-> Claude Design. Nome prodotto **Fuel Your Trek** (nei testi per esteso; "FYT" solo
-> nel logo, mai "FYT Outdoor"). Mobile-first, wizard lineare con barra di avanzamento.
-> Le schermate premium sono **bloccate** (preview).
+> Claude Design. Nome di lavoro **Kcalibro**. Mobile-first, wizard lineare con
+> barra di avanzamento. Le schermate premium sono **bloccate** (preview).
 > Legenda: `[ ... ]` campo input · `( ◯ )` opzione/selezione · `[[ BOTTONE ]]` CTA.
->
-> ⚠️ **Aggiornato (decisioni Riccardo):** lancio **bilingue IT+EN**. Il **flusso
-> gratuito termina a S3** (calorie + **macro** + acqua/sali). **S4 "Cosa mangiare"
-> è premium preview bloccata.** GPX = premium.
 
 ---
 
@@ -16,8 +11,8 @@
 
 ```
 ┌───────────────────────────────┐
-│        🏔️ Fuel Your Trek        │
-│    Fai il pieno per il tuo      │
+│            🏔️ Kcalibro          │
+│   Calibra le tue calorie da     │
 │            cammino              │
 │                                 │
 │  Scopri quante calorie consumi  │
@@ -93,24 +88,22 @@
 │       (3.760 – 4.600)           │
 │                                 │
 │   Al giorno:  ~2.090 kcal       │
-│   Macro: C 55% · G 30% · P 15%  │
 │   💧 Acqua:   ~2,5–3 L/giorno    │
-│   🧂 Sali se fa caldo/sudi       │
 │                                 │
 │  ▸ Come l'abbiamo calcolato     │
 │    Pandolf + Mifflin-St Jeor    │
+│    (stima, ±10%)                │
 │                                 │
-│   [[ Vedi riepilogo ]]          │
-│   [[ 🔒 Cosa mangio? ]]         │
+│       [[ Cosa mangio? ]]        │
 └───────────────────────────────┘
 ```
-- **Traguardo del FREE:** kcal totali/giorno (con range), **macro**, **acqua/sali**.
+- **Output:** kcal totali (con range), kcal/giorno, fabbisogno acqua.
 - **Trasparenza:** sezione espandibile sul metodo + disclaimer "stima".
-- **CTA:** *Vedi riepilogo* → S5 · *🔒 Cosa mangio?* → S4 (premium preview).
+- **CTA:** *Cosa mangio?* → S4.
 
 ---
 
-## S4 — Cosa mangiare   ·   🔒 premium preview (bloccata)
+## S4 — Cosa mangiare   ·   passo 4/4   (cuore del FREE)
 
 ```
 ┌───────────────────────────────┐
@@ -135,8 +128,7 @@
 │       [[ Vedi riepilogo ]]      │
 └───────────────────────────────┘
 ```
-- **Premium preview:** categorie con grammi/kcal e peso cibo mostrati **sfocati/
-  bloccati** con CTA di sblocco (non più contenuto gratuito).
+- **Output:** target kcal/macro + **categorie con grammi e kcal**, peso cibo/giorno.
 - **Educazione:** micro-tip su densità calorica ("punta a ~450+ kcal/100 g").
 - **CTA:** *Scopri Premium* → S6 · *Vedi riepilogo* → S5.
 
@@ -205,18 +197,8 @@
 │  [[ Sblocca con Premium ]]      │
 └───────────────────────────────┘
 ```
-### S6d — GPX & timing barrette 🔒  (firma Riccardo)
-```
-┌───────────────────────────────┐
-│  Carica traccia GPX     🔒      │
-│  Calcolo preciso su salite reali│
-│  ⏱️ Barretta carbo: ore 10:15   │
-│     (prima della salita +600 m) │
-│  [[ Sblocca con Premium ]]      │
-└───────────────────────────────┘
-```
-- **Scopo:** mostrare il valore premium (menu+lista+ingombro+GPX/timing) in modo
-  desiderabile ma bloccato; due opzioni d'acquisto (abbonamento vs *Pass Cammino*).
+- **Scopo:** mostrare il valore premium (menu+lista+ingombro) in modo desiderabile
+  ma bloccato; due opzioni d'acquisto (abbonamento vs *Pass Cammino*).
 - **Metrica:** % tap su *Sblocca* = segnale di willingness-to-pay (PRD §9).
 
 ---
@@ -224,11 +206,10 @@
 ## Mappa di navigazione
 
 ```
-S0 → S1 → S2 → S3 ──→ S5            (flusso FREE)
-                │  └→ S4 🔒 → S6     (premium preview)
-                └────────────→ S6    (CTA premium)
+S0 → S1 → S2 → S3 → S4 → S5
+                     │       └→ S6 (a/b/c) [premium]
+                     └────────→ S6 [premium]
 ```
-- Il **free** va S0→S3→S5. **S4** e **S6** sono premium preview bloccate.
 
 ## Note generali per il prototipo
 - **Barra avanzamento** (●●○○) su S1–S4; back sempre disponibile.
