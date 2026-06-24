@@ -45,9 +45,20 @@ Landing di validazione (Test A/B): cartella [`../landing/`](../landing/).
 2. **Ottimizzare lo spazio, non solo il peso** — nessuno lo fa → differenziatore premium.
 3. **Freemium** — gratis: **calorie + macro + acqua**; premium: menu concreto, lista spesa, ingombro, GPX/timing, diete.
 
-## Prossimi passi
+## Stato & prossimi passi
 
-1. Finire il **prototipo** in Claude Design (ri-branding FYT) e validare le linee guida nutrizionali con un nutrizionista.
-2. Procurare a Claude Design gli **asset di brand reali** di Vette e Baite (palette, font, logo, foto) — vedi caveat del design system.
-3. Test con clienti reali di Riccardo (comprensibilità + willingness-to-pay); lancio alla fiera *Passo dopo passo*.
-4. Solo dopo: parte tecnica, partendo da `formule-calcolo.md` e dalle fonti dati del PRD §14.
+**Fatto:** PRD + documenti di supporto, prototipo FYT (`prototype/fuel-your-trek/`),
+motore di calcolo (`engine/`), strategia di Riccardo (`business-model-partnership.md`),
+**piano dei 3 test** e **bozza business plan**, **landing di validazione** (`landing/`).
+
+**Priorità ora — VALIDARE prima di costruire** (`validation-plan-3-test.md`):
+1. **Test A (pre-vendita):** personalizzare e deployare `landing/` (link pagamento +
+   analytics), esporla a community Riccardo + partner. Gate: paganti reali.
+2. **Test B (acquisizione):** 100–300 € di ads da freddo → misurare CPA/CR.
+3. **Test C (modello):** survey + outreach a influencer/gestori e guide (B2B).
+4. **Solo se i gate sono verdi →** build nativo iOS+Android (appalto) partendo da
+   `formule-calcolo.md` + `engine/` + fonti dati (PRD §14).
+
+**In parallelo (esterni, di Mauro/Riccardo):** asset di brand reali per Design
+(palette/font/logo/foto), verifica dominio+marchio "Fuel Your Trek", numeri dei
+partner (consulenze nutrizionista, BIS, attrezzatura, eventi).
