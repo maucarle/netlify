@@ -76,14 +76,19 @@
 
 ## S6 — Premium (paywall)
 - **Titolo sezione:** Sblocca Fuel Your Trek Premium
-- **Benefici:**
+- **Benefici (feature app):**
   - Menu pronti giorno per giorno con prodotti reali
   - Lista della spesa automatica
   - Ottimizzazione dello **spazio** nello zaino, non solo del peso
-  - Diete e allergie, percorsi salvati, consigli della guida
-- **Opzione A:** Premium — 4,99 €/mese · 29,99 €/anno (risparmi ~50%)
-- **Opzione B:** Solo questo cammino — 2,99 €
-- **CTA:** Sblocca con Premium · Sblocca questo cammino
+  - GPX e timing delle barrette · diete e allergie · percorsi salvati
+- **Membership & perk (value stack):**
+  - 🥗 Consulenza con il **nutrizionista** (online) — X sessioni
+  - 🎒 **Sconti** con i partner di attrezzatura
+  - 🏋️ **Fit for Baite** (con BIS) a prezzo scontato
+  - 🎟️ **−10% sugli eventi Vette e Baite** → l'abbonamento si ripaga
+- **Opzione A (hook):** Solo questo cammino — **2,99 €** (nessun abbonamento)
+- **Opzione B:** Premium — 4,99 €/mese · 29,99 €/anno (risparmi ~50%)
+- **CTA:** Sblocca questo cammino · Passa a Premium
 - **Rassicurazione:** Disdici quando vuoi. Nessun rinnovo nascosto.
 - **Stati bloccati (overlay):** 🔒 Disponibile con Premium
 

@@ -24,6 +24,8 @@ Le risposte di Riccardo alle 14 domande sono recepite nei documenti.
 | [`PRD.md`](./PRD.md) | Documento principale: contesto, **analisi di mercato**, personas, scope MVP, requisiti **free vs premium**, naming, **prezzi**, categorie, **fonti dati**, indicazioni operative di Riccardo (§15) |
 | [`risposte-riccardo.md`](./risposte-riccardo.md) | **Risposte di Riccardo** alle 14 domande + decisioni + link risorse |
 | [`business-model-partnership.md`](./business-model-partnership.md) | **Modello di business & partnership** (direzione Riccardo): distribuzione community/influencer, stack di valore premium, partner |
+| [`validation-plan-3-test.md`](./validation-plan-3-test.md) | **Piano dei 3 test** pre-investimento (pre-vendita, acquisizione, modello) con soglie go/no-go |
+| [`business-plan-bozza.md`](./business-plan-bozza.md) | **Bozza di business plan** (mercato, ricavi, costi, unit economics, roadmap, rischi) |
 | [`naming-fyt-analisi.md`](./naming-fyt-analisi.md) | **Analisi naming** "Fuel Your Trek" (mercato, SEO, marchio) + regole d'uso |
 | [`brief-aggiornamento-design.md`](./brief-aggiornamento-design.md) | **Brief per Claude Design**: cosa cambiare nel prototipo |
 | [`../engine/`](../engine/) | **Motore di calcolo** JS (Pandolf + Mifflin-St Jeor) — `node engine/demo.mjs` |
@@ -35,6 +37,7 @@ Le risposte di Riccardo alle 14 domande sono recepite nei documenti.
 | [`revisione-prototipo.md`](./revisione-prototipo.md) | Revisione del prototipo Claude Design vs specifiche |
 
 Prototipo Claude Design: cartella [`../prototype/`](../prototype/).
+Landing di validazione (Test A/B): cartella [`../landing/`](../landing/).
 
 ## Le 3 idee chiave
 

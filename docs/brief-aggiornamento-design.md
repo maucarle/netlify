@@ -33,6 +33,17 @@
 - **Preset cammini** (italiani): Via degli Dei, Borghi Silenti, Briganti, Vandelli,
   tour Dolomiti/Alpi.
 
+## 3-bis. Paywall "value stack" — S6e (NUOVO, direzione Riccardo)
+Il premium non è solo feature dell'app: aggiungere una schermata **Membership & perk**
+con questi elementi (preview bloccata):
+- 🥗 **Consulenza nutrizionista** (online) — X sessioni
+- 🎒 **Sconti** partner attrezzatura
+- 🏋️ **Fit for Baite** (con BIS) scontato
+- 🎟️ **−10% eventi Vette e Baite** ("l'abbonamento si ripaga")
+
+Gerarchia prezzi: **Pass Cammino 2,99 € = CTA primaria (hook)**; abbonamento come
+seconda opzione per chi vuole i perk. Vedi `business-model-partnership.md`.
+
 ## 4. Input percorso (S2)
 - Free: distanza, dislivello+, giorni, terreno, peso zaino. Opzionali: stagione/
   temperatura, quota.
