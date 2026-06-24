@@ -4,6 +4,14 @@
 > Le decisioni operative sono già recepite in `PRD.md` (§0–§6, §15) e
 > `categorie-alimentari.md`.
 
+## Follow-up audio (dic. 2026) — strategia
+Dopo il pre-mortem, Riccardo ha dato la direzione strategica: distribuzione **non
+Riccardo-centrica** (community/influencer, premium-to-manager), **€2,99 one-time**
+come hook, e **premium come stack di valore** (consulenze nutrizionista online,
+sconti attrezzatura, Fit for Baite/BIS, sconti eventi V&B). Smentisce il
+"mi arrangio": la gente sa *quante* calorie ma non *dove* prenderle.
+→ Dettagli in [`business-model-partnership.md`](./business-model-partnership.md).
+
 ## Decisioni prese (Mauro + Riccardo)
 - **Nome → Fuel Your Trek (FYT)** — Kcalibro piaceva ma chiude all'estero.
 - **Lingua → bilingue IT+EN dal lancio** — mercato vuoto, grande potenziale.
