@@ -23,6 +23,7 @@ Le risposte di Riccardo alle 14 domande sono recepite nei documenti.
 |---|---|
 | [`PRD.md`](./PRD.md) | Documento principale: contesto, **analisi di mercato**, personas, scope MVP, requisiti **free vs premium**, naming, **prezzi**, categorie, **fonti dati**, indicazioni operative di Riccardo (§15) |
 | [`risposte-riccardo.md`](./risposte-riccardo.md) | **Risposte di Riccardo** alle 14 domande + decisioni + link risorse |
+| [`business-model-partnership.md`](./business-model-partnership.md) | **Modello di business & partnership** (direzione Riccardo): distribuzione community/influencer, stack di valore premium, partner |
 | [`naming-fyt-analisi.md`](./naming-fyt-analisi.md) | **Analisi naming** "Fuel Your Trek" (mercato, SEO, marchio) + regole d'uso |
 | [`brief-aggiornamento-design.md`](./brief-aggiornamento-design.md) | **Brief per Claude Design**: cosa cambiare nel prototipo |
 | [`../engine/`](../engine/) | **Motore di calcolo** JS (Pandolf + Mifflin-St Jeor) — `node engine/demo.mjs` |

@@ -39,6 +39,10 @@ Decisioni già prese (Mauro + Riccardo):
 - **Focus d'uso:** giornaliere → contenuto **free** (spuntini/pranzi);
   multi-giorno, soprattutto **in tenda**, → **premium** (pasti completi: massimo
   problema di peso e ingombro).
+- **Distribuzione (Riccardo, dic. 2026):** **non Riccardo-centrica** → via
+  **community/influencer** (premium gratis ai gestori). **€2,99 one-time** come hook
+  consumer; **premium = membership con perk** (nutrizionista, sconti attrezzatura,
+  Fit for Baite/BIS, sconti eventi V&B). Vedi `business-model-partnership.md`.
 
 ---
 
@@ -168,6 +172,16 @@ solo un **assaggio bloccato** (premium preview) come CTA.
   filtro allergeni; opzione **"senza fornello"** (solo reidratazione ad acqua fredda).
 - **Profili e percorsi salvati**, storico, riutilizzo menu.
 - **Consigli "firma Riccardo"** + contenuti di **nutrizionisti/dietisti** partner.
+
+### 5.0 Stack di valore premium (direzione Riccardo — vedi [`business-model-partnership.md`](./business-model-partnership.md))
+Il premium **non è solo feature dell'app**, ma una membership con perk che la
+giustificano e la fanno "ripagare":
+- **Consulenze con nutrizionista** Vette e Baite (X sessioni, **online** preferito).
+- **Sconti con partner attrezzatura** + banner/affiliazione.
+- Accesso **scontato a Fit for Baite** (con **BIS**, personal training).
+- **Sconti su eventi formativi V&B** (es. −10%) → recupero del costo abbonamento.
+> Riccardo smentisce il "tanto so le calorie, mi arrangio": la gente sa *quante*
+> kcal servono ma **non dove prenderle** → il menu/"dove comprare" è valore reale.
 
 ### 5.1 Roadmap B2B — guide/gruppi
 Pacchetto per operatori: **più profili da un unico account** (prezzo per profilo
@@ -315,10 +329,18 @@ generoso** che fa da acquisizione.
 | **Premium** (abbonamento) | **4,99 €/mese** o **29,99 €/anno** | Menu concreti illimitati, lista spesa, ottimizzazione **ingombro**, diete/allergie, percorsi salvati e storico, contenuti "firma Riccardo" |
 | **Pro / Guida** (roadmap B2B) | **~99–149 €/anno** | Pianificazione per gruppi, profili multipli, ripartizione carico, branding per la guida |
 
-**Logica:** il *Pass Cammino* abbassa la barriera (micro-acquisto) e fa da ponte
-verso l'abbonamento; l'**annuale scontato (~50%)** spinge la fidelizzazione;
-il piano **Pro** monetizza il canale guide in futuro. Prezzi da validare con
-test sulla disponibilità a pagare dei clienti reali di Riccardo (§9).
+**Logica (aggiornata, direzione Riccardo):**
+- **Pass Cammino 2,99 € = hook primario** per il consumer: il trekking è
+  **stagionale**, quindi il one-time è più appetibile dell'abbonamento.
+- L'**abbonamento è una membership con perk** (consulenze nutrizionista, sconti
+  attrezzatura, Fit for Baite/BIS, sconti eventi V&B −10%) che lo fanno **ripagare**
+  → vedi §5.0 e [`business-model-partnership.md`](./business-model-partnership.md).
+- **Premium gratuito a influencer/gestori di community** in cambio di promozione
+  (leva di distribuzione, non sconto al pubblico).
+- Il piano **Pro** monetizza il canale guide in futuro.
+
+Prezzi e perk da validare con i **3 test pre-investimento** (pre-vendita reale,
+acquisizione da freddo, scelta modello) prima di appaltare lo sviluppo nativo (§9).
 
 ---
 
@@ -420,6 +442,10 @@ secca → ottimi e biodisponibili. Sera: **liofilizzati** (pasta/riso) ad acqua 
 alta densità calorica, basso peso/ingombro.
 
 ### 15.4 Business & lancio
+- **Distribuzione (direzione Riccardo): NON Riccardo-centrica.** Crescita via
+  **community e influencer già strutturati**, dando il **Premium gratis ai gestori
+  delle pagine** in cambio di promozione (B2B2C). Riccardo = volto/credibilità, non
+  unico canale. Dettagli in [`business-model-partnership.md`](./business-model-partnership.md).
 - **B2B guide** (§5.1): pacchetti multi-profilo con verifica tesserino.
 - **Volto/firma:** Riccardo disponibile; coinvolgere **nutrizionisti/dietisti**
   partner per contenuti approfonditi.
