@@ -14,7 +14,7 @@
 
 ## S0 — Welcome
 - **Titolo:** Fuel Your Trek
-- **Tagline:** Calibra le tue calorie da cammino.
+- **Tagline:** Fai il pieno per il tuo cammino.
 - **Sottotitolo:** Scopri quante calorie consumi e cosa mettere nello zaino.
 - **CTA primaria:** Inizia
 - **Link:** Hai già un profilo? Accedi

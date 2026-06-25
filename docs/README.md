@@ -36,7 +36,8 @@ Le risposte di Riccardo alle 14 domande sono recepite nei documenti.
 | [`formule-calcolo.md`](./formule-calcolo.md) | Bozza **modello di calcolo** (Pandolf + Mifflin-St Jeor) |
 | [`revisione-prototipo.md`](./revisione-prototipo.md) | Revisione del prototipo Claude Design vs specifiche |
 
-Prototipo Claude Design: cartella [`../prototype/`](../prototype/).
+Prototipo Claude Design: cartella [`../prototype/`](../prototype/) — file standalone
+da **inviare a Riccardo**: `prototype/Fuel Your Trek · App completa.html`.
 Landing di validazione (Test A/B): cartella [`../landing/`](../landing/).
 
 ## Le 3 idee chiave

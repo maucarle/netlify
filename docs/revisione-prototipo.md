@@ -5,18 +5,24 @@
 > `copy-microtesti.md`, `categorie-alimentari.md` e alle decisioni di prodotto.
 > Esito: **molto allineato alle specifiche aggiornate**.
 
-## Struttura del prototipo (dopo pulizia)
+## Struttura del prototipo (aggiornata — export Design + pulizia)
 ```
 prototype/
-├── Fuel Your Trek · Sabbia.html      ← standalone apribile (Safari iPhone incluso)
+├── Fuel Your Trek · App completa.html  ← STANDALONE da inviare a Riccardo
 └── fuel-your-trek/
-    ├── Fuel Your Trek · Pino.dc.html   (tema pino)   → importa KcalibroApp
-    ├── Fuel Your Trek · Sabbia.dc.html (tema sabbia) → importa KcalibroApp
-    ├── Fuel Your Trek · Sabbia.html    (bundle)
-    ├── KcalibroApp.dc.html             (sorgente app — nome componente interno)
+    ├── Fuel Your Trek · Pino.dc.html   (tema pino)   → importa FuelYourTrekApp
+    ├── Fuel Your Trek · Sabbia.dc.html (tema sabbia) → importa FuelYourTrekApp
+    ├── Fuel Your Trek · Sabbia.html    (bundle di tema)
+    ├── FuelYourTrekApp.dc.html         (sorgente app — componente rinominato ✅)
     ├── _ds/  (design system Vette e Baite)  assets/  screenshots/  support.js  uploads/
 ```
 Due temi: **Pino** (verde) e **Sabbia** (chiaro).
+
+### ✅ Rifiniture risolte in questo export
+- **Componente rinominato** `KcalibroApp` → **`FuelYourTrekApp`** (più nessun residuo "Kcalibro").
+- **Tagline** aggiornata: niente più "Calibra…", ora **"Fai il pieno per il tuo cammino"**.
+- **Standalone unico** `Fuel Your Trek · App completa.html` per la condivisione.
+- Rimossi i leftover (`FuelYourTrekApp v1`, vecchio standalone di tema duplicato).
 
 ## ✅ Conforme alle decisioni
 - **Rebrand "Fuel Your Trek"** ovunque (welcome, paywall "Fuel Your Trek Premium",
@@ -34,14 +40,14 @@ Due temi: **Pino** (verde) e **Sabbia** (chiaro).
   - **Importa GPX = Premium** in S2
 - **Prezzi:** 4,99 €/mese · 29,99 €/anno · Pass 2,99 €. Disclaimer medico presente.
 
-## 🔧 Rifiniture da fare in Claude Design
-1. **Tagline welcome:** ancora *"Calibra le tue calorie da cammino"* (residuo del
-   nome Kcalibro). Sostituire con qualcosa per FYT, es. *"Fai il pieno per il tuo
-   cammino"* (evitare "calibra").
-2. **Nome componente interno** ancora `KcalibroApp` (in `KcalibroApp.dc.html`):
-   è interno, non visibile in UI. Rinominabile in Design quando comodo; lasciato
-   così per non rischiare la resa.
-3. **Tono:** continuare a bilanciare l'energia di "Fuel" con i valori
+## 🔧 Rifiniture
+1. ✅ ~~Tagline welcome~~ — risolto: ora "Fai il pieno per il tuo cammino".
+2. ✅ ~~Nome componente interno KcalibroApp~~ — risolto: rinominato `FuelYourTrekApp`.
+3. **Paywall "value stack" (S6e):** verificare/aggiungere in Design la schermata
+   Membership & perk (nutrizionista, sconti attrezzatura, **Fit for Baite/BIS**,
+   sconti eventi V&B) — vedi `wireframe.md`/`brief-aggiornamento-design.md`. "Fit for
+   Baite" non risultava per nome nel sorgente: da confermare.
+4. **Tono:** continuare a bilanciare l'energia di "Fuel" con i valori
    *lenti/consapevoli* di Vette e Baite.
 
 ## Limiti attuali (attesi)
@@ -51,10 +57,12 @@ Due temi: **Pino** (verde) e **Sabbia** (chiaro).
   versione definitiva servono gli originali di Vette e Baite.
 
 ## Pulizia effettuata sul repo
-- Rinominata `prototype/Prototipo mobile Kcalibro 2/` → `prototype/fuel-your-trek/`.
-- Rimossi i leftover Kcalibro (`Kcalibro.html`, `Kcalibro Sabbia.html`,
-  `Kcalibro.dc.html`, `KcalibroApp v1.dc.html`) e l'iterazione superata
-  `prototype/Prototipo mobile Kcalibro/`.
+- Cartella `prototype/fuel-your-trek/` con il nuovo export Design (componente
+  `FuelYourTrekApp`), + standalone `Fuel Your Trek · App completa.html` per Riccardo.
+- Rimossi i leftover: `FuelYourTrekApp v1.dc.html`, standalone di tema duplicato
+  (`Fuel Your Trek · Sabbia.html` top-level), e — nelle iterazioni precedenti — tutti
+  i file "Kcalibro".
+- Tutto consolidato su **`main`** (Design pubblica lì; allineato al lavoro su doc/landing).
 
 **Conclusione:** il prototipo FYT rappresenta correttamente brand, flusso e confine
 free/premium aggiornati ed è pronto per i test utente. Restano due piccoli ritocchi
