@@ -47,10 +47,8 @@
 - **Riga acqua:** Acqua: ~{acqua_min}–{acqua_max} L al giorno
 - **Macro (free):** Carboidrati {c}% · Grassi {g}% · Proteine {p}%
 - **Riga sali:** Reintegra **sali/elettroliti** se fa caldo o sudi molto.
-- **Card "Il consiglio di Riccardo" (firma guida):** Colazione abbondante, giornata
-  leggera con tanti piccoli spuntini, cena ricca per recuperare. Bevi spesso e
-  reintegra i sali. Meglio cibi solidi e calorico-densi che gel.
-  *(Etichetta: "🧭 Il consiglio di Riccardo")*
+- **Teaser "🧭 Il consiglio di Riccardo" (S3, free):** Mangia leggero di giorno,
+  recupera la sera. *Il consiglio completo della guida è in Premium.*
 - **Espandibile "Come l'abbiamo calcolato":** Usiamo modelli riconosciuti (Pandolf
   e Mifflin-St Jeor) su peso, zaino, dislivello e terreno. È una **stima** (±10%):
   usala come guida, non come valore esatto.
@@ -65,6 +63,10 @@
 - **Riga peso:** Peso del cibo: ~{peso} g al giorno
 - **Tip educativo:** 💡 Punta a cibi sopra ~450 kcal/100 g: a parità di energia
   pesano meno nello zaino.
+- **Box "🧭 Il consiglio di Riccardo" (completo, premium):** Colazione abbondante
+  prima di partire. Di giorno tieniti leggero con tanti piccoli spuntini. La sera,
+  cena ricca per recuperare. Bevi spesso e reintegra i sali. Meglio cibi solidi e
+  calorico-densi dei gel.
 - **Blocco premium:** Vuoi il **menu pronto** giorno per giorno, la **lista della
   spesa** e l'ottimizzazione dello **spazio**?
 - **CTA primaria:** Scopri Premium · **CTA secondaria:** Vedi riepilogo

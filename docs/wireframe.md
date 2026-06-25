@@ -100,20 +100,17 @@
 │  ▸ Come l'abbiamo calcolato     │
 │    Pandolf + Mifflin-St Jeor    │
 │                                 │
-│  ┌─ 🧭 Il consiglio di Riccardo ┐│
-│  │ Colazione abbondante, giorno ││
-│  │ leggero con tanti spuntini,  ││
-│  │ cena ricca. Bevi e reintegra ││
-│  │ i sali. Punta su cibi solidi.││
-│  └──────────────────────────────┘│
+│  🧭 Il consiglio di Riccardo:    │
+│  mangia leggero di giorno,      │
+│  recupera la sera → in Premium  │
 │                                 │
 │   [[ Vedi riepilogo ]]          │
 │   [[ 🔒 Cosa mangio? ]]         │
 └───────────────────────────────┘
 ```
 - **Traguardo del FREE:** kcal totali/giorno (con range), **macro**, **acqua/sali**.
-- **Firma Riccardo:** card "Il consiglio di Riccardo" (tono da guida) — rinforza
-  credibilità sull'ultima schermata gratuita, prima del paywall.
+- **Firma Riccardo (teaser):** 1 riga "Il consiglio di Riccardo" che invoglia al
+  premium; la versione completa è in S4.
 - **Trasparenza:** sezione espandibile sul metodo + disclaimer "stima".
 - **CTA:** *Vedi riepilogo* → S5 · *🔒 Cosa mangio?* → S4 (premium preview).
 
@@ -138,6 +135,17 @@
 │                                 │
 │  🎒 Peso cibo: ~520 g/giorno    │
 │                                 │
+│  ┌─ 🧭 Il consiglio di Riccardo ┐│
+│  │ Colazione abbondante prima   ││
+│  │ di partire. Di giorno tieniti││
+│  │ leggero con tanti piccoli    ││
+│  │ spuntini. La sera, cena ricca││
+│  │ per recuperare. Bevi spesso e││
+│  │ reintegra i sali. Meglio cibi││
+│  │ solidi e calorico-densi dei  ││
+│  │ gel.                         ││
+│  └──────────────────────────────┘│
+│                                 │
 │  🔒 Vuoi il MENU pronto +       │
 │     lista spesa + ingombro?     │
 │       [[ Scopri Premium ]]      │
@@ -146,6 +154,8 @@
 ```
 - **Premium preview:** categorie con grammi/kcal e peso cibo mostrati **sfocati/
   bloccati** con CTA di sblocco (non più contenuto gratuito).
+- **Firma Riccardo (completa):** il box "Il consiglio di Riccardo" vive qui, in
+  premium, come contenuto della guida (il free ne vede solo il teaser in S3).
 - **Educazione:** micro-tip su densità calorica ("punta a ~450+ kcal/100 g").
 - **CTA:** *Scopri Premium* → S6 · *Vedi riepilogo* → S5.
 

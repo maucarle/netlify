@@ -52,8 +52,9 @@ seconda opzione per chi vuole i perk. Vedi `business-model-partnership.md`.
 ## 5. Tono & firma (rev. post-review)
 - Filosofia "firma Riccardo": colazione buona → giornata leggera (spuntini) →
   cena abbondante. Acqua/sali in primo piano. No gel, sì cibi solidi.
-- **Card "Il consiglio di Riccardo" in S3** (ultima schermata gratuita, prima del
-  paywall): breve, tono da guida. Testo in `copy-microtesti.md` (S3).
+- **"Il consiglio di Riccardo" — teaser in S3 (free) + completo in S4 (premium):**
+  in S3 una riga che invoglia ("mangia leggero di giorno, recupera la sera → in
+  Premium"); in S4 il box completo della guida. Testi in `copy-microtesti.md` (S3/S4).
 - **S5 invariato:** macro-pill + frase di condivisione, **senza elenco categorie**
   (le categorie sono premium → non si mostrano nel riepilogo gratuito).
 
