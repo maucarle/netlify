@@ -47,6 +47,10 @@
 - **Riga acqua:** Acqua: ~{acqua_min}–{acqua_max} L al giorno
 - **Macro (free):** Carboidrati {c}% · Grassi {g}% · Proteine {p}%
 - **Riga sali:** Reintegra **sali/elettroliti** se fa caldo o sudi molto.
+- **Card "Il consiglio di Riccardo" (firma guida):** Colazione abbondante, giornata
+  leggera con tanti piccoli spuntini, cena ricca per recuperare. Bevi spesso e
+  reintegra i sali. Meglio cibi solidi e calorico-densi che gel.
+  *(Etichetta: "🧭 Il consiglio di Riccardo")*
 - **Espandibile "Come l'abbiamo calcolato":** Usiamo modelli riconosciuti (Pandolf
   e Mifflin-St Jeor) su peso, zaino, dislivello e terreno. È una **stima** (±10%):
   usala come guida, non come valore esatto.

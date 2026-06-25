@@ -100,11 +100,20 @@
 │  ▸ Come l'abbiamo calcolato     │
 │    Pandolf + Mifflin-St Jeor    │
 │                                 │
+│  ┌─ 🧭 Il consiglio di Riccardo ┐│
+│  │ Colazione abbondante, giorno ││
+│  │ leggero con tanti spuntini,  ││
+│  │ cena ricca. Bevi e reintegra ││
+│  │ i sali. Punta su cibi solidi.││
+│  └──────────────────────────────┘│
+│                                 │
 │   [[ Vedi riepilogo ]]          │
 │   [[ 🔒 Cosa mangio? ]]         │
 └───────────────────────────────┘
 ```
 - **Traguardo del FREE:** kcal totali/giorno (con range), **macro**, **acqua/sali**.
+- **Firma Riccardo:** card "Il consiglio di Riccardo" (tono da guida) — rinforza
+  credibilità sull'ultima schermata gratuita, prima del paywall.
 - **Trasparenza:** sezione espandibile sul metodo + disclaimer "stima".
 - **CTA:** *Vedi riepilogo* → S5 · *🔒 Cosa mangio?* → S4 (premium preview).
 
@@ -151,7 +160,7 @@
 │  🔥 4.180 kcal   🎒 ~1,0 kg cibo│
 │  💧 ~5–6 L acqua tot            │
 │  Carbo 55 · Grassi 30 · Prot 15 │
-│  Categorie consigliate: …       │
+│  (no elenco categorie: è premium)│
 │                                 │
 │  [[ Condividi ]]  [[ Salva ]]   │
 │                                 │
