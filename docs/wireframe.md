@@ -215,9 +215,27 @@
 │  [[ Sblocca con Premium ]]      │
 └───────────────────────────────┘
 ```
-- **Scopo:** mostrare il valore premium (menu+lista+ingombro+GPX/timing) in modo
-  desiderabile ma bloccato; due opzioni d'acquisto (abbonamento vs *Pass Cammino*).
-- **Metrica:** % tap su *Sblocca* = segnale di willingness-to-pay (PRD §9).
+
+### S6e — Membership & perk 🔒  (value stack — direzione Riccardo)
+```
+┌───────────────────────────────┐
+│  Premium è più di un'app  🔒    │
+│  🥗 Consulenza nutrizionista     │
+│      (online) · X sessioni      │
+│  🎒 Sconti partner attrezzatura  │
+│  🏋️ Fit for Baite (BIS) scontato │
+│  🎟️ −10% sugli eventi Vette e    │
+│      Baite → l'abbonamento si    │
+│      ripaga                      │
+│  [[ Solo questo cammino 2,99€ ]] │
+│  [[ Premium 29,99€/anno ]]      │
+└───────────────────────────────┘
+```
+- **Scopo:** mostrare che il premium vale più della singola feature (menu+lista+
+  ingombro+GPX) grazie alla **membership di perk**; **Pass Cammino 2,99 € come hook
+  primario** (CTA in evidenza), abbonamento come scelta per chi vuole i perk.
+- **Metrica:** % tap su *Sblocca / acquista* = segnale di willingness-to-pay (PRD §9).
+- *Riferimento contenuti:* `business-model-partnership.md`.
 
 ---
 
